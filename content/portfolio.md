@@ -6,6 +6,10 @@ framed: true
 showLogo: true
 showFooter: true
 showCopyright: true
+aliases:
+    - /cs
+    - /experience
+    - /research
 ---
 
 ## Work experience
