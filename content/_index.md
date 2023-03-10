@@ -1,8 +1,6 @@
 ---
 title: "Aditya Saligrama"
-# date: 2023-02-28T20:20:00-08:00
 draft: false
-# showToc: true
 image: ""
 framed: true
 ---
@@ -13,7 +11,7 @@ framed: true
 
 # Aditya Saligrama
 
-I'm a junior computer science major at Stanford University with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
+I'm a junior studying computer science at Stanford with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
 
 Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the Vice President and CCDC Linux lead of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and a security consultant for early-stage startups.
 

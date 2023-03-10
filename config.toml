@@ -23,7 +23,7 @@ paginate = 5
     title = 'Aditya Saligrama'
     subtitle = ""
     keywords = ""
-    copyright = "f"
+    copyright = ""
     menuMore = "Show more"
     showMenuItems = 5
     writtenBy = "Written by"
@@ -45,14 +45,27 @@ paginate = 5
 
     [languages.en.menu]
       [[languages.en.menu.main]]
+        identifier = "portfolio"
+        name = "Portfolio"
+        url = "/portfolio"
+        weight = 1
+      [[languages.en.menu.main]]
         identifier = "blog"
         name = "Blog"
         url = "/blog"
+        weight = 2
       [[languages.en.menu.main]]
         identifier = "notes"
         name = "Notes"
         url = "/notes"
+        weight = 3
       [[languages.en.menu.main]]
         identifier = "photo"
         name = "Photography"
         url = "/photo"
+        weight = 4
+      [[languages.en.menu.main]]
+        identifier = "resume"
+        name = "Resume"
+        url = "/files/resume.pdf"
+        weight = 5
