@@ -7,7 +7,7 @@ framed: true
 
 <!-- <img src="https://saligrama.io/img/profile-photo.jpg" height=300 width=300 style="float: right; margin-left: 1em; border-radius: 5px"> -->
 
-{{< imgproc "/images/profile-photo.jpg" Resize "300x300" right "profile-photo" />}}
+{{< imgproc "/images/profile-photo.png" Resize "300x300" right "profile-photo" />}}
 
 # Aditya Saligrama
 
