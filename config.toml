@@ -2,6 +2,7 @@ baseURL = 'https://saligrama.io'
 languageCode = 'en-us'
 title = 'Aditya Saligrama'
 theme = 'hugo-theme-hello-friend'
+googleAnalytics = true
 
 paginate = 5
 
