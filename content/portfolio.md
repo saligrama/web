@@ -123,6 +123,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). March 10, 2023.
 * [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *Joint w/ [Miles McCain](https://miles.land)*, January 13, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *Joint w/ [Cooper de Nicola](https://github.com/cdenicol)*, October 14, 2022.
+* [A Trust and Safety Analysis of the Metaverse](/files/talks/20220524-metaverse-ts.pdf). May 24, 2022.
 * [Fantastic OAuth tokens and where to find them](/files/talks/20220509-oauth.pdf). *Joint w/ [Glen Husman](https://github.com/glen3b)*, May 9, 2022. ([blog post](/blog/post/dodging-oauth-origin-restrictions/))
 * [Firebase: Insecure by Default](/files/talks/20220218-firebase.pdf). *Joint w/ Miles McCain*, February 18, 2022. ([blog post](/blog/post/firebase-insecure-by-default))
 
