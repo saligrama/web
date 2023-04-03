@@ -11,7 +11,7 @@ framed: true
 
 I'm a junior studying computer science at Stanford with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
 
-Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the Vice President and CCDC Linux lead of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and a security consultant for early-stage startups.
+Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the vice president of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and a security consultant for early-stage startups.
 
 [{{% fontawesome envelope-solid %}}](mailto:aditya@saligrama.io)
 [{{% fontawesome github %}}](https://github.com/saligrama)

@@ -44,11 +44,11 @@ aliases:
 * Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
 * Responded to an [incident]((https://saligrama.io/blog/post/hack-lab-got-hacked/)) involving an EternalBlue attack on course infrastructure.
 
-**Vice President and CCDC Linux Lead** at Stanford Applied Cyber
+**Vice President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
 : *Stanford, CA, Jan 2021 -- Present*
 
-* Securing Linux systems against external red team in CCDC competition environment.
-* 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022.
+* Securing Linux and AWS systems against external red team in CCDC competition environment.
+* 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
 * Lead security basics workshops for beginners (Apr '22, Oct '22) and application security workshops for entrepreneurs (Jan '23).
 * Found and disclosed web, mobile, and cloud security vulnerabilities to 10+ Stanford student startups, leading to fixes to protect sensitive personal data. Work covered in the [Stanford Daily](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/).
 * Presented on vuln-finding in Firebase apps (Feb '22) and working around Google OAuth for security research (May '22).
