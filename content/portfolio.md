@@ -18,6 +18,10 @@ aliases:
 : *Palo Alto, CA, Jun 2022 -- Present*
 * Leading client and API deployment on AWS and organizational security posture for seed-stage rare disease data platform startup.
 
+**Software Engineering Intern, Security and Privacy** at Verkada
+: *San Mateo, CA, Jun 2023 -- Present*
+* Software Engineering Intern (Summer 2023) on the Security team at Verkada.
+
 **Software Engineering Intern** at Lacework
 : *San Jose, CA (remote), Jun 2022 -- Sep 2022*
 * Engineered end-to-end virtualization of benchmarking system on Spark, reducing data import time by 20x vs. Snowflake.
@@ -48,7 +52,7 @@ aliases:
 * Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
 * Responded to an [incident]((https://saligrama.io/blog/post/hack-lab-got-hacked/)) involving an EternalBlue attack on course infrastructure.
 
-**Vice President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
+**President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
 : *Stanford, CA, Jan 2021 -- Present*
 
 * Securing Linux and AWS systems against external red team in CCDC competition environment.

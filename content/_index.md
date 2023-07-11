@@ -5,13 +5,13 @@ image: ""
 framed: true
 ---
 
-{{< imgproc "/images/profile-photo.png" Resize "300x300" right "profile-photo" />}}
+{{< imgproc "/images/profile-photo.png" Resize "330x330" right "profile-photo" />}}
 
 # Aditya Saligrama
 
-I'm a junior studying computer science at Stanford with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
+I'm a Stanford undergraduate and graduate student with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
 
-Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the vice president of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and the head of security and infrastructure at [Medeloop](https://medeloop.ai).
+Currently, I'm a software engineering intern at [Verkada](https://verkada.com), a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the president of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and the head of security and infrastructure at [Medeloop](https://medeloop.ai).
 
 [{{% fontawesome envelope-solid %}}](mailto:aditya@saligrama.io)
 [{{% fontawesome github %}}](https://github.com/saligrama)
