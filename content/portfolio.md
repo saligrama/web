@@ -1,5 +1,6 @@
 ---
 title: "Portfolio"
+description: "Aditya Saligrama's portfolio"
 draft: false
 image: ""
 framed: true
@@ -50,7 +51,7 @@ aliases:
 * Taught two discussion sections (44 students),
 * Designed and implemented course cloud infrastructure on GCP at scale.
 * Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
-* Responded to an [incident]((https://saligrama.io/blog/post/hack-lab-got-hacked/)) involving an EternalBlue attack on course infrastructure.
+* Responded to an [incident](https://saligrama.io/blog/post/hack-lab-got-hacked/) involving an EternalBlue attack on course infrastructure.
 
 **President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
 : *Stanford, CA, Jan 2021 -- Present*
@@ -108,7 +109,7 @@ aliases:
 
 ## Publications
 
-Guillaume Leclerc, **Aditya Saligrama**. [Revisiting Ensembles in an Adversarial Context: Improving Natural Accuracy](https://arxiv.org/abs/2002.11572). *ICLR 2020 Workshop on Towards Trustworthy ML: Rethinking Security and Privacy for ML*. Presented April 26, 2020.
+**Aditya Saligrama**, Guillaume Leclerc. [Revisiting Ensembles in an Adversarial Context: Improving Natural Accuracy](https://arxiv.org/abs/2002.11572). *ICLR 2020 Workshop on Towards Trustworthy ML: Rethinking Security and Privacy for ML*. Presented April 26, 2020.
 
 **Aditya Saligrama**. [KnowBias: Detecting Political Polarity in Long Text Content](https://arxiv.org/abs/1909.12230). *AAAI 2020 Student Abstract and Poster Program*. Presented February 9, 2020.
 

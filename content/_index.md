@@ -1,8 +1,8 @@
 ---
 title: "Aditya Saligrama"
 draft: false
-image: ""
 framed: true
+description: "Security, systems, and open-source enthusiast; Stanford undergraduate and graduate student"
 ---
 
 {{< imgproc "/images/profile-photo.png" Resize "330x330" right "profile-photo" />}}

@@ -11,9 +11,11 @@ paginate = 5
   contentTypeName = "post"
   defaultTheme = ""
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 5
   # Enable to show reading time in minutes for posts
   showReadingTime = false
+
+  og = "/images/profile-photo.png"
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files

@@ -33,7 +33,7 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <!-- OG data -->
-{{ template "_internal/opengraph.html" . }}
+{{ partial "opengraph.html" . }}
 
 <!-- RSS | JSON -->
 {{ range .AlternativeOutputFormats -}}
