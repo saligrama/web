@@ -21,7 +21,8 @@ aliases:
 
 **Software Engineering Intern, Security and Privacy** at Verkada
 : *San Mateo, CA, Jun 2023 -- Present*
-* Software Engineering Intern (Summer 2023) on the Security team at Verkada.
+* Established automated firmware and network security testing program and Linux hardening standards for physical security devices
+* Test implementation and enforcement substantially reduced device attack surface and improved security and compliance posture
 
 **Software Engineering Intern** at Lacework
 : *San Jose, CA (remote), Jun 2022 -- Sep 2022*
@@ -142,7 +143,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 ## Education
 
 **M.S. candidate in Computer Science**, Computer and Network Security track  
-:  at Stanford University, *Feb 2023 -- Jun 2024 (expected)*
+:  at Stanford University, *Feb 2023 -- Jun 2025 (expected)*
 * **CS 255** *Introduction to Cryptography* (W '22)
 * **CS 251** *Cryptocurrencies and Blockchain Technologies* (F '22)
 * **CS 249I** *The Modern Internet* (W '23)
