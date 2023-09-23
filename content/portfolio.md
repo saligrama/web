@@ -20,7 +20,7 @@ aliases:
 * Leading client and API deployment on AWS and organizational security posture for seed-stage rare disease data platform startup.
 
 **Software Engineering Intern, Security and Privacy** at Verkada
-: *San Mateo, CA, Jun 2023 -- Present*
+: *San Mateo, CA, Jun 2023 -- Sep 2023*
 * Established automated firmware and network security testing program and Linux hardening standards for physical security devices
 * Test implementation and enforcement substantially reduced device attack surface and improved security and compliance posture
 
@@ -46,14 +46,6 @@ aliases:
 
 ## Teaching, leadership, and competition experience
 
-**Teaching Assistant and Infrastructure Lead** at Stanford University (via [Stanford Internet Observatory](https://io.stanford.edu))
-: *for INTLPOL 268 Hack Lab taught by Alex Stamos and Riana Pfefferkorn, Sep 2022 -- Dec 2022*
-* Hack Lab is Stanford's intro cybersecurity, cyberlaw, and cyber policy class, with 170+ enrolled students.
-* Taught two discussion sections (44 students),
-* Designed and implemented course cloud infrastructure on GCP at scale.
-* Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
-* Responded to an [incident](https://saligrama.io/blog/post/hack-lab-got-hacked/) involving an EternalBlue attack on course infrastructure.
-
 **President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
 : *Stanford, CA, Jan 2021 -- Present*
 
@@ -65,6 +57,14 @@ aliases:
 * Presented on vulnerabilities in GraphQL client apps (Mar '23) and Gradescope autograders (Apr '23), influencing autograder design for Stanford CS courses.
 * Presented on vuln-finding in Firebase apps (Feb '22) and working around Google OAuth for security research (May '22).
 * Contributed Google OAuth sign-in support to [Baserunner](https://github.com/iosiro/baserunner), an open-source Firebase exploration tool.
+
+**Teaching Assistant and Infrastructure Lead** at Stanford University (via [Stanford Internet Observatory](https://io.stanford.edu))
+: *for INTLPOL 268 Hack Lab taught by Alex Stamos and Riana Pfefferkorn, Sep 2022 -- Dec 2022*
+* Hack Lab is Stanford's intro cybersecurity, cyberlaw, and cyber policy class, with 170+ enrolled students.
+* Taught two discussion sections (44 students),
+* Designed and implemented course cloud infrastructure on GCP at scale.
+* Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
+* Responded to an [incident](https://saligrama.io/blog/post/hack-lab-got-hacked/) involving an EternalBlue attack on course infrastructure.
 
 ## Research experience
 
@@ -132,7 +132,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
-* [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). April 7, 2023.
+* [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
 * [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). March 10, 2023.
 * [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *Joint w/ [Miles McCain](https://miles.land)*, January 13, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *Joint w/ [Cooper de Nicola](https://github.com/cdenicol)*, October 14, 2022.
