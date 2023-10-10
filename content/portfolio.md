@@ -142,19 +142,21 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Education
 
-**M.S. candidate in Computer Science**, Computer and Network Security track  
+**M.S. Candidate in Computer Science**, Computer and Network Security track  
 :  at Stanford University, *Feb 2023 -- Jun 2025 (expected)*
+* **CS 356** *Topics in Computer and Network Security* (F '23)
 * **CS 255** *Introduction to Cryptography* (W '22)
 * **CS 251** *Cryptocurrencies and Blockchain Technologies* (F '22)
 * **CS 249I** *The Modern Internet* (W '23)
 * **CS 229** *Machine Learning* (F '21)
 * **CS 155** *Computer and Network Security* (S '22)
 * **CS 153** *Applied Security at Scale* (W '23)
+* **CS 145** *Data Management and Data Systems* (F '23)
 * **CS 144** *Introduction to Computer Networking* (S '23)
 * **INTLPOL 268** *Hack Lab: Introduction to Cybersecurity* (F '21, TA F '22)
-* **CS 199** *Independent Work -- Research with ESRG* (F '22, W '23)
+* **CS 399/199** *Independent Work -- Research with ESRG* (F '22, W '23, F '23)
 
-**B.S. candidate in Computer Science**, Systems track  
+**B.S. Candidate in Computer Science**, Systems track  
 :  at Stanford University, *Sep 2020 -- Jun 2024 (expected)*
 * **CS 224U** *Natural Language Understanding* (S '21)
 * **CS 191W** *Senior Project -- Research with ESRG* (S '23)
@@ -166,6 +168,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 140E** *Operating Systems Design and Implementation* (W '22)
 * **CS 110L** *Safety in Systems Programming* (S '21)
 * **MATH 104** *Applied Matrix Theory* (S '21)
+* **ARTHIST 1B** *Introduction to the History of Western Art* (F '23)
 * **DESIGN 151** *Designing your Business* (S '23)
 * **LINGUIST 150** *Language and Society* (W '23)
 * **PSYCH 1** *Introduction to Psychology* (F '22)
