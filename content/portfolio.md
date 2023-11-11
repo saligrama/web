@@ -15,52 +15,60 @@ aliases:
 
 ## Work experience
 
-**Head of Infrastructure and Security** at Medeloop
-: *Palo Alto, CA, Jun 2022 -- Present*
-* Leading client and API deployment on AWS and organizational security posture for seed-stage rare disease data platform startup.
-
-**Software Engineering Intern, Security and Privacy** at Verkada
+**Software Engineering Intern, Security and Privacy** at [Verkada](https://www.verkada.com)
 : *San Mateo, CA, Jun 2023 -- Sep 2023*
 * Established automated firmware and network security testing program and Linux hardening standards for physical security devices
 * Test implementation and enforcement substantially reduced device attack surface and improved security and compliance posture
 
-**Software Engineering Intern** at Lacework
+**Software Engineering Intern** at [Lacework](https://www.lacework.com)
 : *San Jose, CA (remote), Jun 2022 -- Sep 2022*
 * Engineered end-to-end virtualization of benchmarking system on Spark, reducing data import time by 20x vs. Snowflake.
 * Contributed enhanced Snowflake and Spark parsing support to [SQLGlot](https://github.com/tobymao/sqlglot), an open-source SQL parser and transpiler. 3 PRs merged.
 
-**Engineering Intern** at Uptycs
+**Engineering Intern** at [Uptycs](https://www.uptycs.com)
 : *Waltham, MA (remote), Nov 2020 -- Apr 2021*
 * Wrote and deployed production feature to Osquery monitoring software to inspect and detect malware in Java packages.
 * Functionality used to detect and patch client software with Log4Shell vulnerabilities (10.0 CVSSv3 base score CVE).
 * Code now [open-source](https://github.com/uptycslabs/uptycs_osquery_extensions/tree/master/extension_java_packages).
 
+**Head of Infrastructure and Security** at [Medeloop](https://medeloop.ai)
+: *Palo Alto, CA, Jun 2022 -- Jun 2023*
+* Led client and API deployment on AWS and organizational security posture for rare disease data platform startup.
+
 **Security consultant for early-stage startups**
 : *Jun 2022 -- Present*
-* Evaluating and strengthening initial setup and ongoing security of tech stack (incl. Firebase, AWS) for Stanford startups.
+* Evaluating and strengthening initial setup and ongoing security of client tech stacks.
 
-**Research Science Institute Intern** at Akamai
+**Research Science Institute Intern** at [Akamai](https://www.akamai.com)
 : *Cambridge, MA, Jun 2019 -- Aug 2019*
 * Engineered realtime garbage collection monitoring system for Go programs with per-thread granularity.
 * Detailed flagging of stop-the-world pauses used for profiling and boosting performance across Akamai Labs codebase.
 
 ## Teaching, leadership, and competition experience
 
-**President and CCDC Linux & Cloud Lead** at Stanford Applied Cyber
+**Prinicpal Instructor** at Stanford University
+: *for [CS 40 Cloud Infrastructure and Scalable Application Deployment](https://infracourse.cloud), Jan 2024 -- Mar 2024*
+
+* Creating and teaching Stanford's first-ever hands-on intro cloud computing course.
+
+**President, CCDC Linux & Cloud Lead, and CPTC Web Lead** at [Stanford Applied Cyber](https://applied-cyber.stanford.edu)
 : *Stanford, CA, Jan 2021 -- Present*
 
-* Securing Linux and AWS systems against external red team in CCDC competition environment.
-* Member of the 2023 National CCDC Championship (1st place) Stanford team.
-* 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
-* Lead security basics workshops for beginners (Apr '22, Oct '22) and application security workshops for entrepreneurs (Jan '23).
+* Securing Linux and AWS systems against external red team in CCDC competition environment. Member of the 2023 National CCDC Championship (1st place) Stanford team; 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
 * Found and disclosed web, mobile, and cloud security vulnerabilities to 10+ Stanford student startups, leading to fixes to protect sensitive personal data. Work covered in the [Stanford Daily](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/).
-* Presented on vulnerabilities in GraphQL client apps (Mar '23) and Gradescope autograders (Apr '23), influencing autograder design for Stanford CS courses.
-* Presented on vuln-finding in Firebase apps (Feb '22) and working around Google OAuth for security research (May '22).
+* Led security basics workshops for beginners (Apr '22, Oct '22, May '23, Oct '23) and application security workshops for entrepreneurs (Jan '23).
+* Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23) and Gradescope autograders (Apr '23), influencing autograder design for Stanford CS courses.
 * Contributed Google OAuth sign-in support to [Baserunner](https://github.com/iosiro/baserunner), an open-source Firebase exploration tool.
+
+**Co-Director** at [Stanford Security Clinic](https://securityclinic.org)
+: *Stanford, CA, Nov 2023 -- Present*
+
+* *Pro bono* digital security and safety consultations for the Stanford community.
 
 **Teaching Assistant and Infrastructure Lead** at Stanford University (via [Stanford Internet Observatory](https://io.stanford.edu))
 : *for INTLPOL 268 Hack Lab taught by Alex Stamos and Riana Pfefferkorn, Sep 2022 -- Dec 2022*
-* Hack Lab is Stanford's intro cybersecurity, cyberlaw, and cyber policy class, with 170+ enrolled students.
+
+* Hack Lab is Stanford's intro cybersecurity, cyberlaw, and cyber policy class, with 170+ enrolled students in Fall 2022.
 * Taught two discussion sections (44 students),
 * Designed and implemented course cloud infrastructure on GCP at scale.
 * Designed and implemented several new lab exercises, including on cracking an encrypted WiFi packet capture, breaking into Windows machines with EternalBlue and psexec, and leaking data from an insecure Firebase mock chat app.
@@ -98,15 +106,16 @@ aliases:
 
 **Owned projects**
 
-* [Securescope: a hardened Gradescope autograder](https://github.com/saligrama/securescope)
-* [Concache: a fast lock-free concurrent hashmap for Rust](https://github.com/saligrama/concache)
-* [Notes for Stanford CS courses](/notes)
+* [CS40 DNS Provisioner](https://github.com/infracourse/dns-provisioner): delegate Cloudflare DNS subzones to AWS nameservers, as a service
+* [Securescope](https://github.com/saligrama/securescope): a hardened Gradescope autograder
+* [Concache](https://github.com/saligrama/concache): a fast lock-free concurrent hashmap for Rust
+* [Notes](/notes) for Stanford CS courses
 * Linux dotfiles -- [desktop](https://github.com/saligrama/dotfiles) and [laptop](https://github.com/saligrama/laptop-dotfiles)
 
 **Contributions**
 
-* [Baserunner, a Firebase databse exploration tool](https://github.com/iosiro/baserunner). Added Google OAuth sign-in support (*Aug 2022*)
-* [SQLGlot, a SQL parser and transpiler](https://github.com/tobymao/sqlglot). Added support for various Snowflake and Spark SQL expressions (*Aug 2022*)
+* [Baserunner](https://github.com/iosiro/baserunner), a Firebase databse exploration tool. Added Google OAuth sign-in support (*Aug 2022*)
+* [SQLGlot](https://github.com/tobymao/sqlglot), a SQL parser and transpiler. Added support for various Snowflake and Spark SQL expressions (*Aug 2022*)
 
 ## Publications
 
