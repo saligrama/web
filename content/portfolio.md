@@ -55,7 +55,7 @@ aliases:
 : *Stanford, CA, Jan 2021 -- Present*
 
 * Securing Linux and AWS systems against external red team in CCDC competition environment. Member of the 2023 National CCDC Championship (1st place) Stanford team; 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
-* Leading web and Linux penetration testing in CPTC competition environment. 1st place finish at Western Regional CPTC 2023.
+* Leading web and Linux penetration testing in CPTC competition environment. 2nd place finish at CPTC9 Global Finals (2024); 1st place finish at Western Regional CPTC 2023.
 * Found and disclosed web, mobile, and cloud security vulnerabilities to 10+ Stanford student startups, leading to fixes to protect sensitive personal data. Work covered in the [Stanford Daily](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/).
 * Led security basics workshops for beginners (Apr '22, Oct '22, May '23, Oct '23) and application security workshops for entrepreneurs (Jan '23).
 * Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23) and Gradescope autograders (Apr '23), influencing autograder design for Stanford CS courses.

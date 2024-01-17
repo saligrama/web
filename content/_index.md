@@ -11,7 +11,7 @@ description: "Security, systems, and open-source enthusiast; Stanford undergradu
 
 I'm a Stanford undergraduate and graduate student with extensive industry, research, teaching, and competition experience in computer systems and cybersecurity. 
 
-Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the president of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and a co-director of the [Stanford Security Clinic](https://securityclinic.org). In Winter 2024, I'll be teaching [CS&nbsp;40](https://infracourse.cloud) (Cloud Application Deployment) at Stanford.
+Currently, I'm a security researcher with [Stanford ESRG](https://esrg.stanford.edu), the president of [Stanford Applied Cyber](https://applied-cyber.stanford.edu), and a co-director of the [Stanford Security Clinic](https://securityclinic.org). I'm also teaching [Stanford's CS40](https://infracourse.cloud) (Cloud Infrastructure and Scalable Application Deployment).
 
 [{{% fontawesome envelope-solid %}}](mailto:aditya@saligrama.io)
 [{{% fontawesome github %}}](https://github.com/saligrama)
