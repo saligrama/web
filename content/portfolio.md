@@ -165,7 +165,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 145** *Data Management and Data Systems* (F '23)
 * **CS 144** *Introduction to Computer Networking* (S '23)
 * **INTLPOL 268** *Hack Lab: Introduction to Cybersecurity* (F '21, TA F '22)
-* **CS 399/199** *Independent Work -- Research with ESRG* (F '22, W '23, F '23)
+* **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24)
 
 **B.S. Candidate in Computer Science**, Systems track  
 :  at Stanford University, *Sep 2020 -- Jun 2024 (expected)*
@@ -179,6 +179,8 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 140E** *Operating Systems Design and Implementation* (W '22)
 * **CS 110L** *Safety in Systems Programming* (S '21)
 * **MATH 104** *Applied Matrix Theory* (S '21)
+* **DESIGN 268** *Designing for Democracy: Election Administration* (W '24)
+* **DANCE 46** *Social Dance I* (W '24)
 * **ARTHIST 1B** *Introduction to the History of Western Art* (F '23)
 * **DESIGN 151** *Designing your Business* (S '23)
 * **LINGUIST 150** *Language and Society* (W '23)
