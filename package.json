@@ -1,8 +1,5 @@
 {
   "dependencies": {
     "@flaregun-net/proxyflare-for-pages": "^0.1.0"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240222.0"
   }
 }
