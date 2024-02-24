@@ -19,6 +19,14 @@ export const onRequest: PagesFunction[] = [
           to: {
             url: "https://saligrama-notes.pages.dev/",
           }
+        },
+        {
+          from: {
+            pattern: "saligrama.pages.dev/photo/*"
+          },
+          to: {
+            url: "https://saligrama-photo.pages.dev/",
+          }
         }
       ]
     }
