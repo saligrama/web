@@ -6,7 +6,7 @@ export const onRequest: PagesFunction[] = [
       routes: [
         {
           from: {
-            pattern: "saligrama.io/blog/*"
+            pattern: "saligrama.io/blog/*",
           },
           to: {
             url: "https://saligrama-blog.pages.dev/",
@@ -14,7 +14,7 @@ export const onRequest: PagesFunction[] = [
         },
         {
           from: {
-            pattern: "saligrama.io/notes/*"
+            pattern: "saligrama.io/notes/*",
           },
           to: {
             url: "https://saligrama-notes.pages.dev/",
@@ -22,10 +22,18 @@ export const onRequest: PagesFunction[] = [
         },
         {
           from: {
-            pattern: "saligrama.io/photo/*"
+            pattern: "saligrama.io/photo/*",
           },
           to: {
             url: "https://saligrama-photo.pages.dev/",
+          }
+        },
+        {
+          from: {
+            pattern: "saligrama.pages.dev/*",
+          },
+          to: {
+            url: "https://saligrama.io/",
           }
         }
       ]
