@@ -142,8 +142,8 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
-* [Reflections on a Quarter of Security Clinic](/static/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
-* [Stanford Security Clinic <-> Stanford CERT](/static/files/talks/20231215-security-clinic.pdf). *Joint w/ Miles McCain*, December 15, 2023.
+* [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
+* [Stanford Security Clinic <-> Stanford CERT](/files/talks/20231215-security-clinic.pdf). *Joint w/ Miles McCain*, December 15, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). October 13, 2023.
 * [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
 * [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). March 10, 2023.
