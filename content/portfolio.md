@@ -142,6 +142,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). March 8, 2024.
 * [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
 * [Stanford Security Clinic <-> Stanford CERT](/files/talks/20231215-security-clinic.pdf). *Joint w/ Miles McCain*, December 15, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). October 13, 2023.
