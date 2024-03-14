@@ -49,7 +49,10 @@ aliases:
 **Prinicpal Instructor** at Stanford University
 : *for [CS 40 Cloud Infrastructure and Scalable Application Deployment](https://infracourse.cloud), Jan 2024 -- Mar 2024*
 
-* Creating and teaching Stanford's first-ever hands-on intro cloud computing course.
+* Taught Stanford's first-ever intro cloud computing course, with 50 students enrolled in Winter 2024.
+* Created and delivered lectures detailing cloud resources available for application deployment and their best-practice usage.
+* Designed hands-on programming assignments involving web application deployment on AWS using CDK to create a containerized and serverless architecture, integrating Datadog for observability and GitHub Actions for CI/CD.
+* Built course management infrastructure for resource [provisioning](https://github.com/infracourse/dns-provisioner) and [autograding](https://github.com/infracourse/iac-grader) using AWS, Cloudflare, and Gradescope.
 
 **President, CCDC Linux & Cloud Lead, and CPTC Web Lead** at [Stanford Applied Cyber](https://applied-cyber.stanford.edu)
 : *Stanford, CA, Jan 2021 -- Present*
@@ -58,7 +61,7 @@ aliases:
 * Leading web and Linux penetration testing in CPTC competition environment. 2nd place finish at CPTC9 Global Finals (2024); 1st place finish at Western Regional CPTC 2023.
 * Found and disclosed web, mobile, and cloud security vulnerabilities to 10+ Stanford student startups, leading to fixes to protect sensitive personal data. Work covered in the [Stanford Daily](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/).
 * Led security basics workshops for beginners (Apr '22, Oct '22, May '23, Oct '23) and application security workshops for entrepreneurs (Jan '23).
-* Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23) and Gradescope autograders (Apr '23), influencing autograder design for Stanford CS courses.
+* Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23), Gradescope autograders (Apr '23), and AWS (Mar '24), influencing autograder design for Stanford CS courses.
 * Contributed Google OAuth sign-in support to [Baserunner](https://github.com/iosiro/baserunner), an open-source Firebase exploration tool.
 
 **Co-Director** at [Stanford Security Clinic](https://securityclinic.org)
