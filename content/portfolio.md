@@ -64,6 +64,11 @@ aliases:
 * Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23), Gradescope autograders (Apr '23), and AWS (Mar '24), influencing autograder design for Stanford CS courses.
 * Contributed Google OAuth sign-in support to [Baserunner](https://github.com/iosiro/baserunner), an open-source Firebase exploration tool.
 
+**Course Assistant** at Stanford University
+: *for [CS 155 Computer and Network Security](https://cs155.stanford.edu) taught by Dan Boneh and Zakir Durumeric, Apr 2024 -- Jun 2024*
+
+* Course assistant for Stanford's main computer security course (200+ enrolled students in Spring 2024) covering low-level, web, and network attacks and defenses.
+
 **Co-Director** at [Stanford Security Clinic](https://securityclinic.org)
 : *Stanford, CA, Nov 2023 -- Present*
 
@@ -110,6 +115,7 @@ aliases:
 
 **Owned projects**
 
+* [CS40 IaC Grader](https://github.com/infracourse/iac-grader): secure autograding for AWS CDK infrastructure-as-code
 * [CS40 DNS Provisioner](https://github.com/infracourse/dns-provisioner): delegate Cloudflare DNS subzones to AWS nameservers, as a service
 * [Securescope](https://github.com/saligrama/securescope): a hardened Gradescope autograder
 * [Concache](https://github.com/saligrama/concache): a fast lock-free concurrent hashmap for Rust
@@ -149,10 +155,11 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
 * [Stanford Security Clinic <-> Stanford CERT](/files/talks/20231215-security-clinic.pdf). *Joint w/ Miles McCain*, December 15, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). October 13, 2023.
+* [Web Hacking for Social Good](/files/talks/20230524-web-hacking-for-social-good.pdf). *Joint w/ [Cooper de Nicola](https://github.com/cdenicol)*, May 24, 2023.
 * [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
 * [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). March 10, 2023.
 * [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *Joint w/ Miles McCain*, January 13, 2023.
-* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *Joint w/ [Cooper de Nicola](https://github.com/cdenicol)*, October 14, 2022.
+* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *Joint w/ Cooper de Nicola*, October 14, 2022.
 * [A Trust and Safety Analysis of the Metaverse](/files/talks/20220524-metaverse-ts.pdf). May 24, 2022.
 * [Fantastic OAuth tokens and where to find them](/files/talks/20220509-oauth.pdf). *Joint w/ [Glen Husman](https://github.com/glen3b)*, May 9, 2022. ([blog post](/blog/post/dodging-oauth-origin-restrictions/))
 * [Firebase: Insecure by Default](/files/talks/20220218-firebase.pdf). *Joint w/ Miles McCain*, February 18, 2022. ([blog post](/blog/post/firebase-insecure-by-default))
@@ -166,15 +173,16 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 251** *Cryptocurrencies and Blockchain Technologies* (F '22)
 * **CS 249I** *The Modern Internet* (W '23)
 * **CS 229** *Machine Learning* (F '21)
-* **CS 155** *Computer and Network Security* (S '22)
+* **CS 155** *Computer and Network Security* (S '22, CA S '24)
 * **CS 153** *Applied Security at Scale* (W '23)
 * **CS 145** *Data Management and Data Systems* (F '23)
 * **CS 144** *Introduction to Computer Networking* (S '23)
 * **INTLPOL 268** *Hack Lab: Introduction to Cybersecurity* (F '21, TA F '22)
-* **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24)
+* **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24, S '24)
 
 **B.S. Candidate in Computer Science**, Systems track  
 :  at Stanford University, *Sep 2020 -- Jun 2024 (expected)*
+* **CS 244B** *Distributed Systems* (S '24)
 * **CS 224U** *Natural Language Understanding* (S '21)
 * **CS 191W** *Senior Project -- Research with ESRG* (S '23)
 * **CS 161** *Design and Analysis of Algorithms* (W '22)
@@ -185,8 +193,10 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 140E** *Operating Systems Design and Implementation* (W '22)
 * **CS 110L** *Safety in Systems Programming* (S '21)
 * **MATH 104** *Applied Matrix Theory* (S '21)
-* **DESIGN 268** *Designing for Democracy: Election Administration* (W '24)
+* **ENGR 76** *Information Science and Engineering* (S '24)
+* **DANCE 146** *Social Dance II* (S '24)
 * **DANCE 46** *Social Dance I* (W '24)
+* **DESIGN 268** *Designing for Democracy: Election Administration* (W '24)
 * **ARTHIST 1B** *Introduction to the History of Western Art* (F '23)
 * **DESIGN 151** *Designing your Business* (S '23)
 * **LINGUIST 150** *Language and Society* (W '23)
