@@ -142,8 +142,10 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Selected long-form blog posts
 
-*Note: these posts were selected due to their exploration and synthesis of existing and new security vulnerabilities or techniques, providing a guide for future related security work.*
+*Note: these posts were selected due to their exploration and synthesis of infrastructure and security techniques, providing a guide for future related work.*
 
+* [What infra do you need for an infra course?](/blog/post/infracourse-infra/), May 2, 2024.
+* [How to create a Stanford course](/blog/post/infracourse-how-to-setup/), April 15, 2024.
 * [A student's dream: hacking (then fixing) Gradescope's autograder](/blog/post/gradescope-autograder-security/), February 28, 2023.
 * [Dodging OAuth origin restrictions for Firebase spelunking](/blog/post/dodging-oauth-origin-restrictions/), November 23, 2022.
 * [Firebase: Insecure by Default (feat. that one time our classmates tried to sue us)](/blog/post/firebase-insecure-by-default/), November 14, 2022.
