@@ -1,9 +1,7 @@
-<a
-  href="{{ if $.Site.Params.Logo.LogoHomeLink }}{{ $.Site.Params.Logo.LogoHomeLink }}{{ else }}{{ $.Site.BaseURL }}{{ end }}"
-  class="logo"
-  style="text-decoration: none;"
->
-    <span class="logo__text"
-      >{{if $.Params.showLogo }}{{ with $.Site.Params.Logo.logoText }}{{ . }}{{ else }}hello friend{{ end }}{{ end }}</span
-    >
+<a href="{{ if $.Site.Params.Logo.LogoHomeLink }}{{ $.Site.Params.Logo.LogoHomeLink }}{{ else }}{{ $.Site.BaseURL }}{{ end }}"
+  class="logo" style="text-decoration: none;">
+  <span class="logo__text">{{if and $.Site.Params.showLogo (not .Params.hideLogo) }}{{ with $.Site.Params.Logo.logoText
+    }}{{ .
+    }}{{ else }}hello
+    friend{{ end }}{{ end }}</span>
 </a>

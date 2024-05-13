@@ -4,13 +4,14 @@ description: "Aditya Saligrama's portfolio"
 draft: false
 image: ""
 framed: true
-showLogo: true
-showFooter: true
-showCopyright: true
+# showLogo: true
+# showFooter: true
+# showCopyright: true
 aliases:
     - /cs
     - /experience
     - /research
+hideWordCount: true
 ---
 
 ## Work experience

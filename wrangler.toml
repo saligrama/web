@@ -1,0 +1,4 @@
+[build]
+command = "hugo"
+cwd = ""
+watch_dir = "public"

@@ -1,15 +1,16 @@
-{{ if $.Params.showFooter }}
+{{ if and $.Site.Params.showFooter (not $.Params.hideFooter) }}
 <footer class="footer">
   <div class="footer__inner">
-    {{ if $.Params.showCopyright }}
-      {{ if $.Site.Copyright }}
-        <div class="copyright copyright--user">{{ $.Site.Copyright | safeHTML }}</div>
-      {{ else }}
-        {{ partial "logo.html" . }}
-        <div class="copyright">
-          <span>© {{ now.Year }}</span><span> Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> and <a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Hello Friend</a></span>
-        </div>
-      {{ end }}
+    {{ if and $.Site.Params.showCopyright (not $.Params.hideCopyright) }}
+    {{ if $.Site.Copyright }}
+    <div class="copyright copyright--user">{{ $.Site.Copyright | safeHTML }}</div>
+    {{ else }}
+    {{ partial "logo.html" . }}
+    <div class="copyright">
+      <span>© {{ now.Year }}</span><span> Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>
+        and <a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank">Hello Friend</a></span>
+    </div>
+    {{ end }}
     {{ end }}
   </div>
 </footer>

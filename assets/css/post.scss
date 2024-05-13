@@ -1,12 +1,12 @@
 .post {
   width: 100%;
-  max-width: 850px;
+  max-width: 900px;
   text-align: left;
   padding: 20px;
   margin: 20px auto;
 
   @media ($tablet) {
-    max-width: 660px;
+    max-width: 710px;
   }
 
   &:not(:last-of-type) {

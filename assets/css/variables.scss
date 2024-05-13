@@ -9,10 +9,13 @@ body.light-theme,
   --border-color: #bcb5b1;
 
   --heading-color: #528641;
+  --code-background: #f2e5bc;
 
   /* variables for js, must be the same as these in @custom-media queries */
   --phoneWidth: (max-width: 684px);
   --tabletWidth: (max-width: 900px);
+
+  @import 'syntax-light';
 }
 
 body.dark-theme {
@@ -25,6 +28,9 @@ body.dark-theme {
   --border-color: #665c54;
 
   --heading-color: #8ec07c;
+  --code-background: #282828;
+
+  @import 'syntax-dark';
 }
 
 @media (prefers-color-scheme: light) {
@@ -38,6 +44,9 @@ body.dark-theme {
     --border-color: #bcb5b1;
 
     --heading-color: #528641;
+    --code-background: #f2e5bc;
+
+    @import 'syntax-light';
   }
 }
 
@@ -52,6 +61,9 @@ body.dark-theme {
     --border-color: #665c54;
 
     --heading-color: #8ec07c;
+    --code-background: #282828;
+
+    @import 'syntax-dark';
   }
 }
 

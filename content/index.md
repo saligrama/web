@@ -3,6 +3,10 @@ title: "Aditya Saligrama"
 draft: false
 framed: true
 description: "Security, systems, and open-source enthusiast; Stanford undergraduate and graduate student"
+hideLogo: true
+hideFooter: true
+hideCopyright: true
+hideWordCount: true
 ---
 
 {{< imgproc "/images/profile-photo.png" Resize "305x305" right "profile-photo" />}}
