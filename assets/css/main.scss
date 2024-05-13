@@ -85,6 +85,11 @@ a {
   fill: var(--color);
 }
 
+.framed h1 {
+  font-size: 2.625rem;
+  line-height: 0.9;
+}
+
 .post-title a,
 h1 {
   color: var(--heading-color);
