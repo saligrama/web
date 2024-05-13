@@ -1,0 +1,78 @@
+body.light-theme,
+:root {
+  /* light theme color */
+  --background: #fbf9ea;
+  --background-secondary: #fbf9ea;
+  --header: #f7f3d6;
+  --color: #282828;
+  --color-secondary: #bb4764;
+  --border-color: #bcb5b1;
+
+  --heading-color: #528641;
+
+  /* variables for js, must be the same as these in @custom-media queries */
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
+}
+
+body.dark-theme {
+  /* dark theme colors */
+  --background: #32302f;
+  --background-secondary: #32302f;
+  --header: #2a2928;
+  --color: #fbf1c7;
+  --color-secondary: #da98aa;
+  --border-color: #665c54;
+
+  --heading-color: #8ec07c;
+}
+
+@media (prefers-color-scheme: light) {
+  body:not(.dark-theme) {
+    /* light theme color */
+    --background: #fbf9ea;
+    --background-secondary: #fbf9ea;
+    --header: #f7f3d6;
+    --color: #282828;
+    --color-secondary: #bb4764;
+    --border-color: #bcb5b1;
+
+    --heading-color: #528641;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light-theme) {
+    /* dark theme colors */
+    --background: #32302f;
+    --background-secondary: #32302f;
+    --header: #252627;
+    --color: #fbf1c7;
+    --color-secondary: #da98aa;
+    --border-color: #665c54;
+
+    --heading-color: #8ec07c;
+  }
+}
+
+/* MEDIA QUERIES */
+$phone: "max-width: 684px";
+$tablet: "max-width: 900px";
+
+@mixin greater-icon($stroke-width: 3px, $width: .95rem, $height: 100%) {
+  .greater-icon {
+    width: $width;
+    height: $height;
+
+    path {
+      stroke: currentColor;
+      stroke-width: $stroke-width;
+    }
+  }
+}
+
+/* HOW TO USE */
+
+/*@media ($phone) {*/
+/*margin-top: 0;*/
+/*}*/

@@ -35,6 +35,7 @@ h4,
 h5,
 h6 {
   font-family: 'Lora';
+  color: var(--heading-color);
 }
 
 h1 {
@@ -74,6 +75,14 @@ h4 {
 
 a {
   color: inherit;
+}
+
+.content a {
+  color: var(--color-secondary);
+}
+
+.inline-svg path {
+  fill: var(--color);
 }
 
 img {

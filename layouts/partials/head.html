@@ -21,6 +21,10 @@
 <!-- Custom CSS to override theme properties (/static/style.css) -->
 <link rel="stylesheet" href="{{ "style.css" | absURL }}" />
 
+{{ with .Resources.GetMatch "*.css" }}
+  <style>{{ .Content | safeCSS }}</style>
+{{ end }}
+
 <!-- Icons: TODO migrate from jsdelivr -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/saligrama/blog@master/static/ico/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/saligrama/blog@master/static/ico/favicon-32x32.png">
