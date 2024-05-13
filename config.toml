@@ -31,20 +31,21 @@ paginate = 30
 
 [languages]
   [languages.en]
-    title = 'Aditya Saligrama'
-    subtitle = ""
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    showMenuItems = 5
-    writtenBy = "Written by"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    minuteReadingTime = "min read"
-    dateFormatSingle = "January 2, 2006"
-    dateFormatList = "January 2, 2006"
+    [languages.en.params]
+      title = 'Aditya Saligrama'
+      subtitle = ""
+      keywords = ""
+      copyright = ""
+      menuMore = "Show more"
+      showMenuItems = 5
+      writtenBy = "Written by"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      minuteReadingTime = "min read"
+      dateFormatSingle = "January 2, 2006"
+      dateFormatList = "January 2, 2006"
 
     [languages.en.params.logo]
       logoText = "Aditya Saligrama"
