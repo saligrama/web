@@ -5,7 +5,7 @@ framed: true
 description: "Security, systems, and open-source enthusiast; Stanford undergraduate and graduate student"
 ---
 
-{{< imgproc "/images/profile-photo.png" Resize "315x315" right "profile-photo" />}}
+{{< imgproc "/images/profile-photo.png" Resize "305x305" right "profile-photo" />}}
 
 # Aditya Saligrama
 

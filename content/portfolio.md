@@ -17,8 +17,8 @@ aliases:
 
 **Software Engineering Intern, Security and Privacy** at [Verkada](https://www.verkada.com)
 : *San Mateo, CA, Jun 2023 -- Sep 2023*
-* Established automated firmware and network security testing program and Linux hardening standards for physical security devices
-* Test implementation and enforcement substantially reduced device attack surface and improved security and compliance posture
+* Established automated firmware and network security testing program and Linux hardening standards for physical security devices.
+* Test implementation and enforcement substantially reduced device attack surface and improved security and compliance posture.
 
 **Software Engineering Intern** at [Lacework](https://www.lacework.com)
 : *San Jose, CA (remote), Jun 2022 -- Sep 2022*
