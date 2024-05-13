@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/firebase-insecure-by-default]
 ---
 
 By shifting the data authorization and access restriction burden from robust programmatic systems running on a server to static security rules, backend-as-a-service platforms like [Google Firebase](https://firebase.google.com) put new app developers and their products at risk of catastrophic data breaches if utmost care is not paid to the efficacy of these rules. 

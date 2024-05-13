@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/upgrading-personal-security-web]
 ---
 
 I'm someone who's been reasonably technical for a long time, but was not really interested in security until about a year and a half ago. This means I had a lot of configuration set up for convenience, but without much in the way of security.

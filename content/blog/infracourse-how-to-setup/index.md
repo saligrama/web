@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/infracourse-how-to-setup]
 ---
 
 *This is the first post in a three-part retrospective on teaching CS 40.*

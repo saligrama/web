@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/dodging-oauth-origin-restrictions]
 ---
 
 In my [last post](/blog/post/firebase-insecure-by-default), I covered the marvelous world of Firebase database spelunking: when app developers misconfigure their Firestore security rules, the resulting ability to perform unauthorized data accesses can lead to terrifying data breaches for those apps. Thanks to tools like [Baserunner](https://github.com/iosiro/baserunner), testing apps for such misconfigurations is easier than ever.

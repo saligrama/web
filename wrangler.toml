@@ -1,4 +1,4 @@
 [build]
-command = "hugo"
+command = "hugo --gc --minify"
 cwd = ""
 watch_dir = "public"

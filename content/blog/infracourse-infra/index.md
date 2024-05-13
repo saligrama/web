@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/infracourse-infra]
 ---
 
 *This is the second post in a three-part retrospective on teaching CS 40.*

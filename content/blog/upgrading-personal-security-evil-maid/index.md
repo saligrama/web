@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/upgrading-personal-security-evil-maid]
 ---
 
 This is a continuation of my [previous post](/blog/post/upgrading-personal-security-web) about upgrading personal security. This post focuses on preventing [evil maid attacks](https://en.wikipedia.org/wiki/Evil_maid_attack) using disk encryption and secure boot.

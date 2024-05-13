@@ -6,6 +6,7 @@ showToc: false
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/hello]
 ---
 
 Test post for this blog.

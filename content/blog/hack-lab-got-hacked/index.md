@@ -7,6 +7,7 @@ showToc: true
 image: "images/dink-humble-pie.png"
 tags: []
 categories: []
+aliases: [/blog/post/hack-lab-got-hacked]
 ---
 
 This morning, an [EternalBlue](https://en.wikipedia.org/wiki/EternalBlue)-vulnerable machine used for testing for Stanford's [Hack Lab](https://archive.ph/PfEXU) course accidentally given a public IP address on Google Cloud was unsurprisingly pwned and used to launch further EternalBlue scanning against other public web hosts.

@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/gradescope-autograder-security]
 ---
 
 Ever since I started exploring security more deeply, I've been asked countless times by people if I could hack into grading systems to change my (or, more often, their) grades. With [Gradescope](https://gradescope.com) being the most ubiquitous platform for grading STEM classes at Stanford, my standard response was always that I couldn't, imagining that a well-established EdTech company would secure their platform well enough.

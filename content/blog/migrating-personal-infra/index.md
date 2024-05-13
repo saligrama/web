@@ -7,6 +7,7 @@ showToc: true
 image: ""
 tags: []
 categories: []
+aliases: [/blog/post/migrating-personal-infra]
 ---
 
 I acquired my personal domain `saligrama.io` in August 2018, and since then, I've used a number of different providers to manage its DNS records as well as the hosting infrastructure hanging off of it.
