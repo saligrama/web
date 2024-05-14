@@ -120,8 +120,8 @@ To demonstrate this process, I created a demo Firebase project that only accepts
 
 I then created a user account for the project backed by my Google account (`aditya@saligrama.io`), as well as some test data in Cloud Firestore to be queried for.
 
-![Demo user](images/oauth-demo-user.png)
-![Test data](images/oauth-test-data.png)
+{{< figure src="images/oauth-demo-user.png" alt="Demo user" position="center" style="border-radius: 8px;" caption="Demo user" captionPosition="center" >}}
+{{< figure src="images/oauth-test-data.png" alt="Test data" position="center" style="border-radius: 8px;" caption="Test data" captionPosition="center" >}}
 
 The objective here is to get the Google OAuth token for `aditya@saligrama.io` corresponding to the demo app that can then produce a Firebase authorization header. This can then be used in a Node.js script to query the database.
 
@@ -171,11 +171,11 @@ Serving HTTP on 127.0.0.1 port 8080 (http://127.0.0.1:8080/) ...
 
 This loads a page with a Google sign-in button, as expected:
 
-![Google sign-in basic page](images/oauth-attempt-1-load.png)
+{{< figure src="images/oauth-attempt-1-load.png" alt="Google sign-in basic page" position="center" style="border-radius: 8px;" caption="Google sign-in basic page" captionPosition="center" >}}
 
 Clicking on the button yields a pop-up with the Google sign-in flow; after succesfully signing in with `aditya@saligrama.io`, the pop-up abruptly closes. Checking the console, we see the following:
 
-![Google sign-in failure due to origin mismatch 1](images/oauth-attempt-1-fail.png)
+{{< figure src="images/oauth-attempt-1-fail.png" alt="Google sign-in failure due to origin mismatch" position="center" style="border-radius: 8px;" caption="Google sign-in failure due to origin mismatch" captionPosition="center" >}}
 
 Clearly, the issue was with the domain we were loading: `http://localhost:8080` is not a registered origin for the demo app. We've run up against the aforementioned origin restriction issue! Let's try using the Firebase project's domain itself.
 
@@ -199,9 +199,9 @@ Serving HTTP on 127.0.0.1 port 80 (http://127.0.0.1:80/) ...
 
 Now, we load this in our web browser, conduct the sign-in flow, and check the console:
 
-![Google sign-in basic page 2](images/oauth-attempt-2-load.png)
+{{< figure src="images/oauth-attempt-2-load.png" alt="Google sign-in basic page" position="center" style="border-radius: 8px;" caption="Google sign-in basic page" captionPosition="center" >}}
 
-![Google sign-in failure due to origin mismatch 1](images/oauth-attempt-2-fail.png)
+{{< figure src="images/oauth-attempt-2-fail.png" alt="Google sign-in failure due to origin mismatch" position="center" style="border-radius: 8px;" caption="Google sign-in failure due to origin mismatch" captionPosition="center" >}}
 
 Another failure. Maybe changing the scheme and port, using HTTPS over port 443, will help.
 
@@ -264,11 +264,11 @@ Naturally, as the certificate is self-signed, Firefox throws a warning that can 
 
 In this case, you'll need to clear HSTS settings by clearing all data associated with the site from your browser.
 
-![Self-signed cert warning](images/oauth-attempt-3-self-signed-err.png)
+{{< figure src="images/oauth-attempt-3-self-signed-err.png" alt="Self-signed cert warning" position="center" style="border-radius: 8px;" caption="Self-signed cert warning" captionPosition="center" >}}
 
 We again go through the Google sign-in flow and check the console, which yields the token!
 
-![Auth success](images/oauth-attempt-3-success.png)
+{{< figure src="images/oauth-attempt-3-success.png" alt="Auth success" position="center" style="border-radius: 8px;" caption="Auth success" captionPosition="center" >}}
 
 I should note that I've seen some projects follow Firebase default settings to allow `http://localhost` (port 80) as an origin, which would shortcut the hostname and certificate process. However, I've also seen projects remove `localhost` as an acceptable origin once in production, so it's more reliable to use the actual Firebase project's domain over HTTPS as above.
 
@@ -325,7 +325,7 @@ Coincidentally, the lack of Google sign-in support was an [open issue](https://g
 
 My [pull request](https://github.com/iosiro/baserunner/pull/12) was merged in August 2022. We can now use Baserunner to query for the data!
 
-![Succesful query using Baserunner](images/oauth-baserunner-success.png)
+{{< figure src="images/oauth-baserunner-success.png" alt="Succesful query using Baserunner" position="center" style="border-radius: 8px;" caption="Succesful query using Baserunner" captionPosition="center" >}}
 
 # Conclusion
 

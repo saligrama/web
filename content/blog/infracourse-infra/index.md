@@ -33,7 +33,7 @@ That said, to my knowledge, CS 40 is the only university course that focuses on 
 
 Since web development expertise was beyond the scope of the course, we needed to have an example web app with both a backend and a frontend for students to deploy. Inspired by [this article on Instagram's early architecture](https://read.engineerscodex.com/p/how-instagram-scaled-to-14-million), we decided to build a minimal image-sharing app in its vein. 
 
-![Instagram's architecture as an early-stage startup](images/instagram-architecture.png)
+{{< figure src="images/instagram-architecture.png" alt="Instagram's architecture as an early-stage startup" position="center" style="border-radius: 8px;" caption="Instagram's architecture as an early-stage startup" captionPosition="center" >}}
 
 We decided to modernize the architecture a little and adopt serverless design wherever we could. Instead of dedicated VMs for application servers, we used containers via [AWS Elastic Container Service](https://aws.amazon.com/ecs/). We hosted the Postgres database using [AWS Aurora Serverless](https://aws.amazon.com/rds/aurora/serverless/) rather than managing Postgres on an EC2 VM. We cut down on some of the application features (in particular, the entire follower-following social model) which allowed us to simplify the data model and avoid needing to use Redis.
 

@@ -40,9 +40,9 @@ Figuring these cloud nuances out took us much of the night of Sunday, October 9 
 
 This morning, I woke up to three emails from GCP sent between the hours of 4:00am and 6:00am that notified us that our course infrastructure was used to conduct port scans against nearly 230,000 IP addresses for EternalBlue vulnerability.
 
-![GCP multiple emails](images/gcp-emails-20221012.png)
+{{< figure src="images/gcp-emails-20221012.png" alt="Receiving multiple early-morning emails from GCP" position="center" style="border-radius: 8px;" caption="Receiving multiple early-morning emails from GCP" captionPosition="center" >}}
 
-![GCP emails us about a possible pwn](images/gcp-scan-email.png) 
+{{< figure src="images/gcp-scan-email.png" alt="GCP emails us about a possible pwn" position="center" style="border-radius: 8px;" caption="GCP emails us about a possible pwn" captionPosition="center" >}} 
 
 In my sleep-addled state when I got up, my first thought was "this doesn't look super legit to me, as when Google wants to tell you that your security sucks, usually it's a robot sending an email and not a human." But then I was able to verify the identity of the sender and the legitimacy of the email -- at which point I thought "we're running a hacking class where we're telling students to EternalBlue their way into machines, of course there's gonna be suspicious-looking traffic on the network."
 
@@ -54,7 +54,7 @@ By now, it was nearly 9am and students would start using the machines again duri
 
 We quickly determined that the IP address we were emailed about was a test machine we created at 4:24am on Monday morning with the name `win-final-template-1-attackme1`. In our sleep-addled state that day, we had accidentally given an EternalBlue-vulnerable machine a public IP address, exposing it to the web and the dangers (i.e., automated scanners) that lurk in the wild. 
 
-![The offending GCP instance](images/gcp-offending-instance.png) 
+{{< figure src="images/gcp-offending-instance.png" alt="The offending GCP instance" position="center" style="border-radius: 8px;" caption="The offending GCP instance" captionPosition="center" >}} 
 
 Our first course of action was to immediately shut down and destroy that VM instance, as well as a few other similar test machines that had similar issues. Given our time constraints, we decided we wouldn't be able to do a thorough investigation of what the attacker was trying to do with our pwned box.
 
@@ -64,13 +64,13 @@ It's extremely rare that attackers can break out of a GCP virtual machine to gai
 
 Thanks to the robust and maintainable infrastructure management code we built out before the quarter started, we were able to do this in only 15 minutes while only using 7 command-line commands and have everything ready well before the lab started at 10:30am. The only remaining issue was that some students received scary messages warning of an SSH man-in-the-middle attack as the VM fingerprint had changed on regeneration. We had to provide instructions so that students weren't encumbered by this in the course of completing the lab.
 
-![SSH man-in-the-middle warning](images/ssh-mitm.png) 
+{{< figure src="images/ssh-mitm.png" alt="SSH man-in-the-middle warning" position="center" style="border-radius: 8px;" caption="SSH man-in-the-middle warning" captionPosition="center" >}} 
 
 ## Turning the hack into a teachable moment
 
 Conveniently, this week at Hack Lab is when we teach about corporate intrusion, security research, and responsible disclosure in lecture. We decided we could use our own incident as a way of doing a public postmortem to our students and illustrating how to responsibly handle incidents like these. So Cooper and I got up on the stage of Dinkelspiel Auditorium and ate the humble pie.
 
-![Eating the humble pie on the Dink stage](images/dink-humble-pie.png) 
+{{< figure src="images/dink-humble-pie.png" alt="Eating the humble pie on the Dink stage" position="center" style="border-radius: 8px;" caption="Eating the humble pie on the Dink stage" captionPosition="center" >}} 
 
 In particular, we talked about how the breach happened, the (nonexistent) impact on students and their data, and how enterprises have an ethical obligation to inform their stakeholders about breaches once incidents are remediated. We feel that leading by example in this context is highly important given the less-than-stellar reputation of Stanford student startups with regards to properly handling vulnerability disclosures and other security incidents.
 

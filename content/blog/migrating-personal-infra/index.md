@@ -32,7 +32,7 @@ Over the years, I've also used the domain as a convenient way to link to other r
 
 Another bit of infra that I had was a service that would generate [OpenGraph](https://ogp.me/) images for this blog dynamically given a title, a date, and a word count. This was hosted on Vercel using their OpenGraph image generation [library](https://vercel.com/docs/functions/og-image-generation), and was a little insecure given that anyone could make a request to that service and make it appear that I had arbitrary, possibly unhinged blog post titles.
 
-![Dangerous Clickbait Title That Looks Authentic](images/og-fake.png)
+{{< figure src="images/og-fake.png" alt="Dangerous Clickbait Title That Looks Authentic" position="center" style="border-radius: 8px;" caption="Dangerous Clickbait Title That Looks Authentic" captionPosition="center" >}}
 
 # Motivation
 
@@ -213,7 +213,7 @@ Note that at this point GitHub pages is still serving `saligrama.io`, since we h
 
 The next step is to set up DNS mirroring the existing records on Namecheap. The existing state of the Namecheap DNS records was as follows:
 
-![Existing Namecheap DNS records](images/namecheap-dns-records.png)
+{{< figure src="images/namecheap-dns-records.png" alt="Existing Namecheap DNS records" position="center" style="border-radius: 8px;" caption="Existing Namecheap DNS records" captionPosition="center" >}}
 
 This boiled down to
 
@@ -283,7 +283,7 @@ This is a simple ClickOps step. Cloudflare gives us the nameservers that we shou
 
 Here, we just change the "Nameservers" setting on the "Domain" tab in Namecheap to "Custom DNS", providing the Cloudflare nameservers.
 
-![Setting nameservers in Namecheap](images/namecheap-cloudflare-ns.png)
+{{< figure src="images/namecheap-cloudflare-ns.png" alt="Setting nameservers in Namecheap" position="center" style="border-radius: 8px;" caption="Setting nameservers in Namecheap" captionPosition="center" >}}
 
 This took about ten minutes to activate, and Cloudflare helpfully emailed me to let me know that my zone was now active and authoritative. I continued unceremoniously receiving spam over the next few hours, which let me know my mail records hadn't broken.
 
@@ -291,7 +291,7 @@ This took about ten minutes to activate, and Cloudflare helpfully emailed me to 
 
 This is another ClickOps step in the Namecheap console. Under the "Sharing and Transfer" tab, we turn "Domain Lock" off, which sends us an email with an [Auth-Code](https://en.wikipedia.org/wiki/Auth-Code).
 
-![Namecheap Auth EPP code](images/namecheap-auth-code.png)
+{{< figure src="images/namecheap-auth-code.png" alt="Receiving an Auth EPP code from Namecheap" position="center" style="border-radius: 8px;" caption="Receiving an Auth EPP code from Namecheap" captionPosition="center" >}}
 
 It then takes the unlock status a few hours to propagate, and in the morning when Cloudflare recognized the new status, I could then enter the auth code in that console. 
 
@@ -299,7 +299,7 @@ Interestingly, when transferring a domain to a different registrar, the new regi
 
 After paying the fee, it appeared that it would take several days for the domain transfer to process. However, Namecheap sent me another email where I could opt in to expedite the transfer project, and after clicking on that confirmation the transfer process completed instantaneously.
 
-![Expediting the domain transfer](images/namecheap-expedite-transfer.png)
+{{< figure src="images/namecheap-expedite-transfer.png" alt="Expediting the domain transfer" position="center" style="border-radius: 8px;" caption="Expediting the domain transfer" captionPosition="center" >}}
 
 ## Switching the apex DNS records to Cloudflare Pages
 
@@ -333,7 +333,7 @@ resource "cloudflare_record" "root_saligrama_io_cf_pages" {
 
 This essentially lets us point `saligrama.io` to `saligrama.pages.dev`, but with Cloudflare doing the work of fronting the content from `saligrama.pages.dev` without redirecting us there.
 
-![Cloudflare CNAME proxy](images/cloudflare-cname-proxy.png)
+{{< figure src="images/cloudflare-cname-proxy.png" alt="How Cloudflare CNAME proxying works" position="center" style="border-radius: 8px;" caption="How Cloudflare CNAME proxying works" captionPosition="center" >}}
 
 Since we already have Proxyflare set up for the subsites, there's no additional work to be done on that end.
 

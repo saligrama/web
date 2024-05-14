@@ -24,7 +24,7 @@ Gradescope uses short-lived Docker containers hosted on AWS to test and grade st
 
 To borrow [Hanbang Wang](https://www.seas.upenn.edu/~hanbangw)'s graphic, the autograder flow is as follows:
 
-![Gradescope autograder flow](images/gradescope-autograder-flow.png)
+{{< figure src="images/gradescope-autograder-flow.png" alt="Gradescope autograder flow" position="center" style="border-radius: 8px;" caption="Gradescope autograder flow" captionPosition="center" >}}
 
 In particular, there are three entities that we care about:
 
@@ -83,11 +83,11 @@ pty.spawn("/bin/sh")
 
 We also need to run a control-and-command (C2) server available on `C2_HOST_IP:C2_PORT`, which can be easily done with a cheap Digital Ocean droplet. Simply run the command `nc -lk C2_PORT -vvv` using a port such as `4444`.
 
-![Gradescope Docker root reverse shell](images/gradescope-root-reverse-shell.png)
+{{< figure src="images/gradescope-root-reverse-shell.png" alt="Gradescope Docker root reverse shell" position="center" style="border-radius: 8px;" caption="Gradescope Docker root reverse shell" captionPosition="center" >}}
 
 This also allows us to exfiltrate test cases that would otherwise be hidden (we know these are hidden test cases due to the presence of the `visibility` decorator controlling access before the assignment due date):
 
-![Gradescope hidden test case exfiltration](images/gradescope-test-exfil.png)
+{{< figure src="images/gradescope-test-exfil.png" alt="Gradescope hidden test case exfiltration" position="center" style="border-radius: 8px;" caption="Gradescope hidden test case exfiltration" captionPosition="center" >}}
 
 ## Editing autograder results
 
@@ -105,7 +105,7 @@ with open("/autograder/run_autograder", "a") as exout:
 
 When submitting, this gives me 999% on the assignment:
 
-![Gradescope score change](images/gradescope-score-change.png)
+{{< figure src="images/gradescope-score-change.png" alt="Gradescope score change" position="center" style="border-radius: 8px;" caption="Gradescope score change" captionPosition="center" >}}
 
 A simpler variation is to just directly write to `results.json` from student code, then attempt to close the client code's file descriptor for that file:
 
@@ -241,7 +241,7 @@ To validate the efficacy of Securescope's security features on this assignment, 
 
 The above attack was prevented by the `seccomp` IP socket syscall blocker:
 
-![Seccomp IP socket syscall blocker preventing reverse shell attack](images/gradescope-seccomp-block-ip.png)
+{{< figure src="images/gradescope-seccomp-block-ip.png" alt="Seccomp IP socket syscall blocker preventing reverse shell attack" position="center" style="border-radius: 8px;" caption="Seccomp IP socket syscall blocker preventing reverse shell attack" captionPosition="center" >}}
 
 ```js
 // result modification via closing file descriptors
@@ -259,7 +259,7 @@ process.exit(0);
 
 This attack was prevented by the nonce verification process:
 
-![Nonce verification blocking result modification attack](images/gradescope-nonce-verification.png)
+{{< figure src="images/gradescope-nonce-verification.png" alt="Nonce verification blocking result modification attack" position="center" style="border-radius: 8px;" caption="Nonce verification blocking result modification attack" captionPosition="center" >}}
 
 Having tested Securescope's additional security features against attacks written in both Python and NodeJS, I now feel more confident making claims about Securescope's security properties.
 

@@ -28,7 +28,7 @@ Firebase’s big selling point for early-stage app development is that it abstra
 
 As Firebase serves as the backend itself, clients such as web and mobile apps connect directly to both the authentication system and to the datastore itself using a set of API keys that are distributed with every client instance (i.e., every app download has the same set of Firebase API keys embedded in it). There is no programmatic authorization system for restricting which clients can see what data, as there would be in a traditional client-server-database model. 
 
-![Firebase's client model versus traditional. Credit to Iosiro Security for the image](https://uploads-ssl.webflow.com/5e39239f2e417c1a357f71f5/60927deba737083eb80929d0_traditional-firebase.svg)
+{{< figure src="https://uploads-ssl.webflow.com/5e39239f2e417c1a357f71f5/60927deba737083eb80929d0_traditional-firebase.svg" alt="Firebase's client model versus traditional (Iosiro Security)" position="center" style="border-radius: 8px;" caption="Firebase's client model versus traditional (Iosiro Security)" captionPosition="center" >}} 
 
 Instead, data access limitations are configured in the admin view using [JSON-based security rules](https://firebase.google.com/docs/rules), which allows developers to specify which classes of users are allowed to read or write to and from each data path. When data models start to involve any modicum of complexity, configuring these security rules to properly restrict unauthorized access to data gets tricky. From [Firebase's documentation](https://firebase.google.com/docs/rules#how_do_they_work):
 
@@ -91,7 +91,7 @@ It's not particularly difficult to find these tokens:
 
 Once you have the API tokens, the easiest way to start spelunking around the database is to use [Baserunner](https://github.com/iosiro/baserunner), which allows you to set a Firebase config in JSON format for a particular app and then authenticate into that app if necessary. Authentication is supported via email/password, phone number/OTP, and via Google account (this was [my contribution](https://github.com/iosiro/baserunner/pull/12), and the motivation and implementation of this feature will be the subject of a future blog post).
 
-![Baserunner UI, credit to Iosiro Security for the image](https://uploads-ssl.webflow.com/5e39239f2e417c1a357f71f5/60927ddd3ccc704c3bb86a9d_baserunner-in-action.png)
+{{< figure src="https://uploads-ssl.webflow.com/5e39239f2e417c1a357f71f5/60927ddd3ccc704c3bb86a9d_baserunner-in-action.png" alt="Baserunner UI (Iosiro Security)" position="center" style="border-radius: 8px;" caption="Baserunner UI (Iosiro Security)" captionPosition="center" >}} 
 
 Once authenticated into the datastore for the app you're testing, you can use a query template to start trying to request data from CFS or RTDB (depending on what the app uses). Doing so requires knowing or guessing collection and potentially document names that correspond to valid data for the app. There are ways to make this easier, such as searching through Javascript source code in web or React Native apps, or by using a gRPC-capable proxy such as [mitmproxy](https://github.com/mitmproxy/mitmproxy) to intercept and inspect requests between mobile clients and Firebase.
 
@@ -107,7 +107,7 @@ Note that if you try to access an invalid data path, Firebase's client library u
 
 [Fizz](https://fizzsocial.app), formerly Buzz, is an iOS-only social messaging platform for sharing posts and associated comments that’s popular at Stanford and other college campuses. The app is structured such that each user has an account that requires a community-affiliated email to verify membership, but can post anonymously. Users can accrue points based on the popularity of their posts.
 
-![Screenshot of Fizz from their App Store listing](https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/55/c1/e7/55c1e701-b2df-a501-4f5a-48a506f7f0e5/c780362b-3e00-40ae-92dd-cdb75e12b6fb_Latest_Updates_6.5.png/230x0w.png)
+{{< figure src="https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/55/c1/e7/55c1e701-b2df-a501-4f5a-48a506f7f0e5/c780362b-3e00-40ae-92dd-cdb75e12b6fb_Latest_Updates_6.5.png/230x0w.png" alt="Screenshot of Fizz (App Store)" position="center" style="border-radius: 8px;" caption="Screenshot of Fizz (App Store)" captionPosition="center" >}} 
 
 Owing to its purportedly anonymous nature, Fizz posts can often consist of highly sensitive information. For example, users often use the platform to talk about their LGBTQ+ identity, even while in family situations that are not supportive of said identity.
 
@@ -155,21 +155,25 @@ However, the email associated with a user session did not need to be affiliated 
 
 We first requested the `users` collection; this contained the expected information such as emails, phone numbers, app points accrued, and moderator status. We noticed there was also a `userID` field and theorized that this field would be what connected the `users` and `posts` collections.
 
-![Fizz users collection columns](images/fizz_users.png) 
+{{< figure src="images/fizz_users.png" alt="Users collection" position="center" style="border-radius: 8px;" caption="Users collection" captionPosition="center" >}} 
 
 We were then able to request the `posts` collection; finding this was a bit trickier because the table was namespaced under a specific member of the `communities` collection. That is, each community has its own posts table.
 
-![Fizz posts collection columns](images/fizz_posts.png) 
+{{< figure src="images/fizz_posts.png" alt="Posts collection" position="center" style="border-radius: 8px;" caption="Posts collection" captionPosition="center" >}} 
 
 This contained a treasure trove of information for each post including post content, pseudonyms, the user ID of the user that created it, the user IDs of the users that upvoted and downvoted the posts, and more. This effectively broke app anonymity because with a join of the `users` and `posts` collection on the user ID fields, each post’s author could be identified down to their email address and/or phone number. 
 
 We also found that the `users` collection could be modified. We were able to change the points value of my user account to 99 trillion, and the modification was then reflected when opening the app.
 
-![Points value modified to 99 trillion](images/fizz_karma_mod.png) 
+{{< figure src="images/fizz_karma_mod.png" alt="Points value modified to 99 trillion" position="center" style="border-radius: 8px;" caption="Setting karma to 99 trillion" captionPosition="center" >}} 
 
-More concerning, however, was that we could easily promote the account to be a moderator by simply changing the `isModerator` field on my account from `null` to `true`. This gave me access to a moderation UI and the ability to delete arbitrary posts from the app itself, including those made by accounts that were not my own (note that the only posts that were deleted were created by Miles for testing purposes). We reverted all modifications immediately after taking screenshots from the app for documentation purposes, and we only modified accounts that we had express consent from the owners to access (indeed, the only accounts we modified were our own)..
+More concerning, however, was that we could easily promote the account to be a moderator by simply changing the `isModerator` field on my account from `null` to `true`. This gave me access to a moderation UI and the ability to delete arbitrary posts from the app itself, including those made by accounts that were not my own (note that the only posts that were deleted were created by Miles for testing purposes). We reverted all modifications immediately after taking screenshots from the app for documentation purposes, and we only modified accounts that we had express consent from the owners to access (indeed, the only accounts we modified were our own).
 
-![Fizz moderator UI](images/fizz_mod_ui.png)![Remove other user's post option](images/fizz_mod_remove_post.png) ![Successfully removed other user's post](images/fizz_mod_remove_post_gone.png)
+{{< figure src="images/fizz_mod_ui.png" alt="Fizz moderator UI" position="center" style="border-radius: 8px;" caption="Fizz moderator UI" captionPosition="center" >}}
+
+{{< figure src="images/fizz_mod_remove_post.png" alt="Option to remove post as mod" position="center" style="border-radius: 8px;" caption="Option to remove post as mod" captionPosition="center" >}}
+
+{{< figure src="images/fizz_mod_remove_post_gone.png" alt="Removed post as mod" position="center" style="border-radius: 8px;" caption="Removed post as mod" captionPosition="center" >}}
 
 ## Disclosure
 
@@ -199,7 +203,7 @@ Not all the blame can be placed entirely on developers. In my opinion, Google do
 
 However, I think developers tend to continuously reset the Test Mode timer well into the production cycle rather than working on better security rules, particularly if they are in a rapid-growth and feature-addition phase. In addition, Google has no way of warning developers of nearly-as-insecure rules such as those mentioned above.
 
-![Firebase test mode email warning](images/firebase_test_mode_warning.png)
+{{< figure src="images/firebase_test_mode_warning.png" alt="Firebase test mode email warning" position="center" style="border-radius: 8px;" caption="Firebase test mode email warning" captionPosition="center" >}}
 
 Google should add stronger warnings to Firebase documentation in addition to emails and the console, such that developers truly understand the importance of setting proper security rules in a timely manner. This documentation must be easily accessible and written in a way that new developers can understand and implement these rules, given Firebase's target market. Additionally, Google should also develop a way to click on any collection or document and see exactly which users or roles have access to that document. This would allow developers to self-test their rules without too much extra effort.
 

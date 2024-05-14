@@ -80,7 +80,7 @@ By the time we had our course approval in hand, we were already hard at work bui
 
 Our decision to build an image-sharing app was based on a [blog post](https://read.engineerscodex.com/p/how-instagram-scaled-to-14-million) detailing Instagram's early architecture. We felt that the domain allowed us to make the app as simple or as complex as needed based on the needs of the course, and that modernizing some of the infrastructure choices would lead to an architecture that would be suitable for many early-stage startups like the ones we see at Stanford.
 
-![Deciding on an image-sharing app](images/yoctogram-idea.jpg)
+{{< figure src="images/yoctogram-idea.jpg" alt="Deciding on an image-sharing app" position="center" style="border-radius: 8px;" caption="Deciding on an image-sharing app" captionPosition="center" >}}
 
 Fall quarter consisted of a lot of heads-down building of Yoctogram's backend and deployment IaC, which would serve as the starter code for Assignment 2 and a base for Assignments 3 and 4. We also built a [course website](https://infracourse.cloud) and some miscellaneous course management infrastructure. I'll talk more about their technical specifics in a later post.
 
