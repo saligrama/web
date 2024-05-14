@@ -88,6 +88,10 @@ a {
 .framed h1 {
   font-size: 2.625rem;
   line-height: 0.9;
+
+  @media ($phone) {
+    font-size: 2.4rem;
+  }
 }
 
 .post-title a,
