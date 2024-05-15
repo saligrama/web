@@ -3,10 +3,6 @@ title: "Portfolio"
 description: "Aditya Saligrama's portfolio"
 draft: false
 image: ""
-framed: true
-# showLogo: true
-# showFooter: true
-# showCopyright: true
 aliases:
     - /cs
     - /experience

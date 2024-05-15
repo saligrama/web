@@ -9,7 +9,7 @@ hideCopyright: true
 hideWordCount: true
 ---
 
-{{< imgproc "/images/profile-photo.png" Resize "305x305" right "profile-photo" />}}
+{{< imgproc "/images/profile-photo.png" Resize "300x300" right "profile-photo" />}}
 
 # Aditya Saligrama
 
