@@ -150,7 +150,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
-* [Network Protocols and Internet Security](/files/talks/20240517-internet-protocols-network-security.pdf). May 17, 2024.
+* [Internet Protocols and Network Security (CS 155 Section 7)](/files/talks/20240517-internet-protocols-network-security.pdf). May 17, 2024.
 * [Intro to Ethical Web Hacking](/files/talks/20240426-intro-ethical-hacking.pdf). April 26, 2024.
 * [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). March 8, 2024.
 * [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
