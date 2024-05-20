@@ -57,7 +57,7 @@ hideWordCount: true
 * Securing Linux and AWS systems against external red team in CCDC competition environment. Member of the 2023 National CCDC Championship (1st place) Stanford team; 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
 * Leading web and Linux penetration testing in CPTC competition environment. 2nd place finish at CPTC9 Global Finals (2024); 1st place finish at Western Regional CPTC 2023.
 * Found and disclosed web, mobile, and cloud security vulnerabilities to 10+ Stanford student startups, leading to fixes to protect sensitive personal data. Work covered in the [Stanford Daily](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/).
-* Led security basics workshops for beginners (Apr '22, Oct '22, May '23, Oct '23) and application security workshops for entrepreneurs (Jan '23).
+* Led security basics workshops for beginners (Apr '22, Oct '22, May '23, Oct '23, Apr '24, May '24) and application security workshops for entrepreneurs (Jan '23).
 * Presented on vuln-finding in Firebase apps (Feb '22), in GraphQL client apps (Mar '23), Gradescope autograders (Apr '23), and AWS (Mar '24), influencing autograder design for Stanford CS courses.
 * Contributed Google OAuth sign-in support to [Baserunner](https://github.com/iosiro/baserunner), an open-source Firebase exploration tool.
 
@@ -150,20 +150,21 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
-* [Internet Protocols and Network Security (CS 155 Section 7)](/files/talks/20240517-internet-protocols-network-security.pdf). May 17, 2024.
-* [Intro to Ethical Web Hacking](/files/talks/20240426-intro-ethical-hacking.pdf). April 26, 2024.
-* [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). March 8, 2024.
-* [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *Joint w/ [Miles McCain](https://miles.land)*, February 16, 2024.
-* [Stanford Security Clinic <-> Stanford CERT](/files/talks/20231215-security-clinic.pdf). *Joint w/ Miles McCain*, December 15, 2023.
-* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). October 13, 2023.
-* [Web Hacking for Social Good](/files/talks/20230524-web-hacking-for-social-good.pdf). *Joint w/ [Cooper de Nicola](https://github.com/cdenicol)*, May 24, 2023.
-* [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
-* [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). March 10, 2023.
-* [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *Joint w/ Miles McCain*, January 13, 2023.
-* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *Joint w/ Cooper de Nicola*, October 14, 2022.
-* [A Trust and Safety Analysis of the Metaverse](/files/talks/20220524-metaverse-ts.pdf). May 24, 2022.
-* [Fantastic OAuth tokens and where to find them](/files/talks/20220509-oauth.pdf). *Joint w/ [Glen Husman](https://github.com/glen3b)*, May 9, 2022. ([blog post](/blog/post/dodging-oauth-origin-restrictions/))
-* [Firebase: Insecure by Default](/files/talks/20220218-firebase.pdf). *Joint w/ Miles McCain*, February 18, 2022. ([blog post](/blog/post/firebase-insecure-by-default))
+* [Ethical Web Hacking for Fun and (maybe) Profit](/files/talks/20240518-ethical-web-hacking.pdf). *Stanford Splash*, May 18, 2024.
+* [Internet Protocols and Network Security](/files/talks/20240517-internet-protocols-network-security.pdf). *[CS 155](https://cs155.stanford.edu) Section 7*, May 17, 2024.
+* [Intro to Ethical Web Hacking](/files/talks/20240426-intro-ethical-hacking.pdf). *Stanford Admit Weekend*, April 26, 2024.
+* [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). *Stanford Applied Cyber Weekly Meeting (ACWM)*, March 8, 2024.
+* [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *ACWM (w/ [Miles McCain](https://miles.land))*, February 16, 2024.
+* [About the Stanford Security Clinic](/files/talks/20231215-security-clinic.pdf). *Stanford CERT (w/ Miles McCain)*, December 15, 2023.
+* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). *ACWM*, October 13, 2023.
+* [Web Hacking for Social Good](/files/talks/20230524-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 24, 2023.
+* [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). *ACWM*, April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
+* [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). *ACWM*, March 10, 2023.
+* [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *ASES Bootcamp (w/ Miles McCain)*, January 13, 2023.
+* [Stanford Applied Cyber Intro Security Workshop](/files/talks/20221014-intro-security-workshop.pdf). *ACWM (w/ Cooper de Nicola)*, October 14, 2022.
+* [A Trust and Safety Analysis of the Metaverse](/files/talks/20220524-metaverse-ts.pdf). *PWR 1CK Final Presentation*, May 24, 2022.
+* [Fantastic OAuth tokens and where to find them](/files/talks/20220509-oauth.pdf). *ACWM (w/ [Glen Husman](https://github.com/glen3b))*, May 9, 2022. ([blog post](/blog/post/dodging-oauth-origin-restrictions/))
+* [Firebase: Insecure by Default](/files/talks/20220218-firebase.pdf). *ACWM (w/ Miles McCain)*, February 18, 2022. ([blog post](/blog/post/firebase-insecure-by-default))
 
 ## Education
 
