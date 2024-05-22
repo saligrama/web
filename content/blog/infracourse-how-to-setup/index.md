@@ -10,7 +10,7 @@ categories: []
 aliases: [/blog/post/infracourse-how-to-setup]
 ---
 
-*This is the first post in a three-part retrospective on teaching CS 40.*
+*This is the first post in a three-part retrospective on teaching [CS 40](https://infracourse.cloud).*
 
 Last quarter (Winter 2024), [Cody Ho](https://github.com/aesrentai) and I taught [CS 40](https://infracourse.cloud) *Cloud Infrastructure and Scalable Application Deployment* at Stanford, a new course we'd been working on creating for nearly a year. CS 40 is Stanford's first-ever hands-on intro cloud computing course, and with 50 students enrolled, achieving our instructional goals of leaving students with a robust understanding of the material was no easy feat.
 

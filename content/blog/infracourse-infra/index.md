@@ -10,7 +10,7 @@ categories: []
 aliases: [/blog/post/infracourse-infra]
 ---
 
-*This is the second post in a three-part retrospective on teaching CS 40.*
+*This is the second post in a three-part retrospective on teaching [CS 40](https://infracourse.cloud).*
 
 With 50 students enrolled in CS 40 in Winter 2024 and only three members of the teaching staff, we knew that we would need to automate as much of the course management as possible. Given how novel our course material was, this necessitated building a *lot* of custom infrastructure, both for students to use, and for us to manage the course.
 
