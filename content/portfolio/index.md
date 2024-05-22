@@ -150,6 +150,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Web Hacking for Social Good](/files/talks/20240521-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 21, 2024.
 * [Ethical Web Hacking for Fun and (maybe) Profit](/files/talks/20240518-ethical-web-hacking.pdf). *Stanford Splash*, May 18, 2024.
 * [Internet Protocols and Network Security](/files/talks/20240517-internet-protocols-network-security.pdf). *[CS 155](https://cs155.stanford.edu) Section 7*, May 17, 2024.
 * [Intro to Ethical Web Hacking](/files/talks/20240426-intro-ethical-hacking.pdf). *Stanford Admit Weekend*, April 26, 2024.
@@ -157,7 +158,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *ACWM (w/ [Miles McCain](https://miles.land))*, February 16, 2024.
 * [About the Stanford Security Clinic](/files/talks/20231215-security-clinic.pdf). *Stanford CERT (w/ Miles McCain)*, December 15, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). *ACWM*, October 13, 2023.
-* [Web Hacking for Social Good](/files/talks/20230524-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 24, 2023.
+* [Web Hacking for Social Good](/files/talks/20230524-web-hacking-for-social-good.pdf). *CS 106S Week 8 (w/ Cooper de Nicola)*, May 24, 2023.
 * [Hacking (then fixing) Gradescope's autograder](/files/talks/20230407-gradescope-autograder-security.pdf). *ACWM*, April 7, 2023. ([blog post](/blog/post/gradescope-autograder-security))
 * [Hacking GraphQL for fun ~~and profit~~](/files/talks/20230310-graphql.pdf). *ACWM*, March 10, 2023.
 * [Applied Cyber x ASES Safety and Security Workshop](/files/talks/20230113-ases-security-workshop.pdf). *ASES Bootcamp (w/ Miles McCain)*, January 13, 2023.
