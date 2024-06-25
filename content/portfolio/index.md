@@ -12,6 +12,10 @@ hideWordCount: true
 
 ## Work experience
 
+**Software Engineering Intern** at [Cloudflare](https://www.cloudflare.com)
+: *Austin, TX, Jun 2024 -- Sep 2024*
+* Zero-Trust Connectivity team.
+
 **Software Engineering Intern, Security and Privacy** at [Verkada](https://www.verkada.com)
 : *San Mateo, CA, Jun 2023 -- Sep 2023*
 * Established automated firmware and network security testing program and Linux hardening standards for physical security devices.
