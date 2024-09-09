@@ -14,7 +14,8 @@ hideWordCount: true
 
 **Software Engineering Intern** at [Cloudflare](https://www.cloudflare.com)
 : *Austin, TX, Jun 2024 -- Sep 2024*
-* Zero-Trust Connectivity team.
+* Created debugging RPC clients written in Rust and Go that exercise Cloudflare One (WARP, Magic, Load Balancer, Gateway) routing services by sending test traffic over L3 and L4 proxy tunnels pinned to targeted edge servers.
+* Significantly reduced time to resolve internal and customer issues across both engineering and customer support teams.
 
 **Software Engineering Intern, Security and Privacy** at [Verkada](https://www.verkada.com)
 : *San Mateo, CA, Jun 2023 -- Sep 2023*
