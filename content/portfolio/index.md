@@ -131,6 +131,8 @@ hideWordCount: true
 
 ## Publications
 
+**Aditya Saligrama**, Cody Ho, Benjamin Tripp, Michael Abbott, Christos Kozyrakis. [Teaching Cloud Infrastructure and Scalable Application Deployment in an Undergraduate Computer Science Program](https://arxiv.org/abs/2410.01032). *SIGCSE 2025 Technical Symposium*. To appear.
+
 **Aditya Saligrama**, Guillaume Leclerc. [Revisiting Ensembles in an Adversarial Context: Improving Natural Accuracy](https://arxiv.org/abs/2002.11572). *ICLR 2020 Workshop on Towards Trustworthy ML: Rethinking Security and Privacy for ML*. Presented April 26, 2020.
 
 **Aditya Saligrama**. [KnowBias: Detecting Political Polarity in Long Text Content](https://arxiv.org/abs/1909.12230). *AAAI 2020 Student Abstract and Poster Program*. Presented February 9, 2020.
