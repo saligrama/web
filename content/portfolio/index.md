@@ -69,7 +69,8 @@ hideWordCount: true
 **Course Assistant** at Stanford University
 : *for [CS 155 Computer and Network Security](https://cs155.stanford.edu) taught by Dan Boneh and Zakir Durumeric, Apr 2024 -- Jun 2024*
 
-* Course assistant for Stanford's main computer security course (200+ enrolled students in Spring 2024) covering low-level, web, and network attacks and defenses.
+* Course assistant for Stanford's main computer security course (200+ enrolled students in Spring 2024) covering memory corruption, web, and network attacks and defenses.
+* Built autograders for buffer overflow and web security labs using Gradescope, Docker, Python, and Playwright.
 
 **Co-Director** at [Stanford Security Clinic](https://securityclinic.org)
 : *Stanford, CA, Nov 2023 -- Present*
@@ -119,8 +120,10 @@ hideWordCount: true
 
 * [CS40 IaC Grader](https://github.com/infracourse/iac-grader): secure autograding for AWS CDK infrastructure-as-code
 * [CS40 DNS Provisioner](https://github.com/infracourse/dns-provisioner): delegate Cloudflare DNS subzones to AWS nameservers, as a service
+* [Catshare](https://github.com/saligrama/catshare-serverless): A purposely insecure web app for security workshops, hosted on Cloudflare Pages
 * [Securescope](https://github.com/saligrama/securescope): a hardened Gradescope autograder
 * [Concache](https://github.com/saligrama/concache): a fast lock-free concurrent hashmap for Rust
+* [Terraform](https://github.com/saligrama/saligrama-io-tf) for managing my deployed personal projects
 * [Notes](/notes) for Stanford CS courses
 * Linux dotfiles -- [desktop](https://github.com/saligrama/dotfiles) and [laptop](https://github.com/saligrama/laptop-dotfiles)
 
@@ -131,7 +134,7 @@ hideWordCount: true
 
 ## Publications
 
-**Aditya Saligrama**, Cody Ho, Benjamin Tripp, Michael Abbott, Christos Kozyrakis. [Teaching Cloud Infrastructure and Scalable Application Deployment in an Undergraduate Computer Science Program](https://arxiv.org/abs/2410.01032). *SIGCSE 2025 Technical Symposium*. To appear.
+**Aditya Saligrama**, Cody Ho, Benjamin Tripp, Michael Abbott, Christos Kozyrakis. [Teaching Cloud Infrastructure and Scalable Application Deployment in an Undergraduate Computer Science Program](https://arxiv.org/abs/2410.01032). *SIGCSE 2025 Technical Symposium*. To be presented March 1, 2025.
 
 **Aditya Saligrama**, Guillaume Leclerc. [Revisiting Ensembles in an Adversarial Context: Improving Natural Accuracy](https://arxiv.org/abs/2002.11572). *ICLR 2020 Workshop on Towards Trustworthy ML: Rethinking Security and Privacy for ML*. Presented April 26, 2020.
 
@@ -148,6 +151,8 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 *Note: these posts were selected due to their exploration and synthesis of infrastructure and security techniques, providing a guide for future related work.*
 
+* [How practical should computer science degrees be, anyway?](/blog/post/practical-skills-in-cs-degrees/), June 17, 2024.
+* [Reflections on teaching a Stanford cloud course](/blog/post/infracourse-reflections/), May 22, 2024.
 * [What infra do you need for an infra course?](/blog/post/infracourse-infra/), May 2, 2024.
 * [How to create a Stanford course](/blog/post/infracourse-how-to-setup/), April 15, 2024.
 * [A student's dream: hacking (then fixing) Gradescope's autograder](/blog/post/gradescope-autograder-security/), February 28, 2023.
@@ -182,28 +187,31 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 255** *Introduction to Cryptography* (W '22)
 * **CS 251** *Cryptocurrencies and Blockchain Technologies* (F '22)
 * **CS 249I** *The Modern Internet* (W '23)
+* **CS 244B** *Distributed Systems* (S '24)
 * **CS 229** *Machine Learning* (F '21)
 * **CS 155** *Computer and Network Security* (S '22, CA S '24)
 * **CS 153** *Applied Security at Scale* (W '23)
-* **CS 145** *Data Management and Data Systems* (F '23)
 * **CS 144** *Introduction to Computer Networking* (S '23)
 * **INTLPOL 268** *Hack Lab: Introduction to Cybersecurity* (F '21, TA F '22)
 * **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24, S '24)
 
 **B.S. Candidate in Computer Science**, Systems track  
 :  at Stanford University, *Sep 2020 -- Jun 2024 (expected)*
-* **CS 244B** *Distributed Systems* (S '24)
 * **CS 224U** *Natural Language Understanding* (S '21)
 * **CS 191W** *Senior Project -- Research with ESRG* (S '23)
 * **CS 161** *Design and Analysis of Algorithms* (W '22)
 * **CS 154** *Introduction to the Theory of Computer Science* (F '21)
 * **CS 152** *Trust and Safety Engineering* (S '23)
 * **CS 149** *Parallel Computing* (F '22)
+* **CS 145** *Data Management and Data Systems* (F '23)
 * **CS 143** *Compilers* (S '22)
 * **CS 140E** *Operating Systems Design and Implementation* (W '22)
 * **CS 110L** *Safety in Systems Programming* (S '21)
 * **MATH 104** *Applied Matrix Theory* (S '21)
 * **ENGR 76** *Information Science and Engineering* (S '24)
+* **BUSGEN 105** *Strategic Management of Entrepreneurial Ventures* (F '24)
+* **TAPS 103** *Beginning Improvising* (F '24)
+* **EPS 42** *Moving and Shaking in the Bay Area* (F '24)
 * **DANCE 146** *Social Dance II* (S '24)
 * **DANCE 46** *Social Dance I* (W '24)
 * **DESIGN 268** *Designing for Democracy: Election Administration* (W '24)
