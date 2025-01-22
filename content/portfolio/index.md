@@ -12,6 +12,10 @@ hideWordCount: true
 
 ## Work experience
 
+**Software Engineer** at [Formal](https://joinformal.com)
+: *San Francisco, CA, Jan 2025 -- Present*
+* Empowering security teams to enforce least-privilege access to production infrastructure through a novel reverse-proxy approach.
+
 **Software Engineering Intern** at [Cloudflare](https://www.cloudflare.com)
 : *Austin, TX, Jun 2024 -- Sep 2024*
 * Created debugging RPC clients written in Rust and Go that exercise Cloudflare One (WARP, Magic, Load Balancer, Gateway) routing services by sending test traffic over L3 and L4 proxy tunnels pinned to targeted edge servers.
@@ -182,7 +186,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 ## Education
 
 **M.S. Candidate in Computer Science**, Computer and Network Security track  
-:  at Stanford University, *Feb 2023 -- Jun 2025 (expected)*
+:  at Stanford University, *Feb 2023 -- Dec 2024*
 * **CS 356** *Topics in Computer and Network Security* (F '23)
 * **CS 255** *Introduction to Cryptography* (W '22)
 * **CS 251** *Cryptocurrencies and Blockchain Technologies* (F '22)
@@ -196,7 +200,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24, S '24)
 
 **B.S. Candidate in Computer Science**, Systems track  
-:  at Stanford University, *Sep 2020 -- Jun 2024 (expected)*
+:  at Stanford University, *Sep 2020 -- Dec 2024*
 * **CS 224U** *Natural Language Understanding* (S '21)
 * **CS 191W** *Senior Project -- Research with ESRG* (S '23)
 * **CS 161** *Design and Analysis of Algorithms* (W '22)
