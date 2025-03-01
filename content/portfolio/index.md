@@ -138,7 +138,7 @@ hideWordCount: true
 
 ## Publications
 
-**Aditya Saligrama**, Cody Ho, Benjamin Tripp, Michael Abbott, Christos Kozyrakis. [Teaching Cloud Infrastructure and Scalable Application Deployment in an Undergraduate Computer Science Program](https://arxiv.org/abs/2410.01032). *SIGCSE 2025 Technical Symposium*. To be presented March 1, 2025.
+**Aditya Saligrama**, Cody Ho, Benjamin Tripp, Michael Abbott, Christos Kozyrakis. [Teaching Cloud Infrastructure and Scalable Application Deployment in an Undergraduate Computer Science Program](https://arxiv.org/abs/2410.01032). *SIGCSE 2025 Technical Symposium*. Presented March 1, 2025.
 
 **Aditya Saligrama**, Guillaume Leclerc. [Revisiting Ensembles in an Adversarial Context: Improving Natural Accuracy](https://arxiv.org/abs/2002.11572). *ICLR 2020 Workshop on Towards Trustworthy ML: Rethinking Security and Privacy for ML*. Presented April 26, 2020.
 
@@ -166,6 +166,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Teaching Cloud Infrastructure in an Undergraduate CS Program](/files/talks/20250301-teaching-cloud-infrastructure.pdf). *[SIGCSE TS 2025](https://sigcse2025.sigcse.org/) (w/ [Cody Ho](https://github.com/aesrentai))*, March 1, 2025.
 * [Web Hacking for Social Good](/files/talks/20240521-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 21, 2024.
 * [Ethical Web Hacking for Fun and (maybe) Profit](/files/talks/20240518-ethical-web-hacking.pdf). *Stanford Splash*, May 18, 2024.
 * [Internet Protocols and Network Security](/files/talks/20240517-internet-protocols-network-security.pdf). *[CS 155](https://cs155.stanford.edu) Section 7*, May 17, 2024.
