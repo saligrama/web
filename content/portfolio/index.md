@@ -12,7 +12,7 @@ hideWordCount: true
 
 ## Work experience
 
-**Software Engineer** at [Formal](https://joinformal.com)
+**Senior Software Engineer (Tech Lead)** at [Formal](https://joinformal.com)
 : *San Francisco, CA, Jan 2025 -- Present*
 * Empowering security teams to enforce least-privilege access to production infrastructure through a novel reverse-proxy approach.
 
@@ -80,6 +80,7 @@ hideWordCount: true
 : *Stanford, CA, Nov 2023 -- Present*
 
 * *Pro bono* digital security and safety consultations for the Stanford community.
+* Speaking at BSidesSF 2025 about lessons from running this product security-focused clinic (18% acceptance rate).
 
 **Teaching Assistant and Infrastructure Lead** at Stanford University (via [Stanford Internet Observatory](https://io.stanford.edu))
 : *for INTLPOL 268 Hack Lab taught by Alex Stamos and Riana Pfefferkorn, Sep 2022 -- Dec 2022*
