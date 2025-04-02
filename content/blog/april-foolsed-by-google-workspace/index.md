@@ -53,11 +53,9 @@ Before describing my prank orchestration, I do want to attach the fake threat le
 >
 > Accordingly, we request that each member of the Group confirm the following in writing by April 5, 2025:
 >
-> That they will not further access Peregrine’s systems, endpoints, or dashboards, including any dev/staging instances labeled “pls-ignore”;
->
-> That they have deleted any data, screenshots, or performance reviews accessed during this interaction;
->
-> That they will not publicly disclose or discuss this incident outside of a brief, tasteful “lessons learned” blog post approved by Peregrine’s Media Integrity Team.
+> 1. That they will not further access Peregrine’s systems, endpoints, or dashboards, including any dev/staging instances labeled “pls-ignore”;
+> 2. That they have deleted any data, screenshots, or performance reviews accessed during this interaction;
+> 3. That they will not publicly disclose or discuss this incident outside of a brief, tasteful “lessons learned” blog post approved by Peregrine’s Media Integrity Team.
 >
 > If the Group complies with these reasonable requests, Peregrine will consider this matter resolved and will not pursue further action. However, Peregrine reserves all rights and remedies available under law and equity should future access occur without prior coordination.
 >
