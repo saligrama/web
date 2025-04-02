@@ -13,7 +13,7 @@ hideWordCount: true
 
 # Aditya Saligrama
 
-I'm a senior software engineer at [Formal](https://joinformal.com) helping empower security teams enforce least-privilege access to production infrastructure.
+I'm a senior software engineer at [Formal](https://joinformal.com) helping empower security teams to enforce least-privilege access to production compute and data infrastructure.
 
 I recently graduated from Stanford University with B.S. and M.S. degrees in computer science focusing on systems and security. At Stanford, I taught a [course](https://infracourse.cloud) on cloud infrastructure, led [Applied Cyber](https://applied-cyber.stanford.edu) competition teams to podium national [CCDC](https://nationalccdc.org/index.php/competition/about-ccdc/past-winners) and [CPTC](https://cp.tc/previous-winners) performances, and conducted security research with [Stanford ESRG](https://esrg.stanford.edu).
 
