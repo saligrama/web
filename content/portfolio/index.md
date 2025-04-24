@@ -61,7 +61,7 @@ hideWordCount: true
 * Built course management infrastructure for resource [provisioning](https://github.com/infracourse/dns-provisioner) and [autograding](https://github.com/infracourse/iac-grader) using AWS, Cloudflare, and Gradescope.
 
 **President, CCDC Linux & Cloud Lead, and CPTC Web Lead** at [Stanford Applied Cyber](https://applied-cyber.stanford.edu)
-: *Stanford, CA, Jan 2021 -- Present*
+: *Stanford, CA, Jan 2021 -- Apr 2025*
 
 * Securing Linux and AWS systems against external red team in CCDC competition environment. Member of the 2023 National CCDC Championship (1st place) Stanford team; 3rd place finish at National CCDC 2022; 1st place at Western Regional CCDC 2022 and 2023.
 * Leading web and Linux penetration testing in CPTC competition environment. 2nd place finish at CPTC9 Global Finals (2024); 1st place finish at Western Regional CPTC 2023.
@@ -187,7 +187,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Education
 
-**M.S. Candidate in Computer Science**, Computer and Network Security track  
+**M.S. in Computer Science**, Computer and Network Security track  
 :  at Stanford University, *Feb 2023 -- Dec 2024*
 * **CS 356** *Topics in Computer and Network Security* (F '23)
 * **CS 255** *Introduction to Cryptography* (W '22)
@@ -201,7 +201,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 * **INTLPOL 268** *Hack Lab: Introduction to Cybersecurity* (F '21, TA F '22)
 * **CS 399/199** *Independent Work -- Research with ESRG, Teaching CS 40* (F '22, W '23, F '23, W '24, S '24)
 
-**B.S. Candidate in Computer Science**, Systems track  
+**B.S. in Computer Science**, Systems track  
 :  at Stanford University, *Sep 2020 -- Dec 2024*
 * **CS 224U** *Natural Language Understanding* (S '21)
 * **CS 191W** *Senior Project -- Research with ESRG* (S '23)
