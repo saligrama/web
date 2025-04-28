@@ -80,7 +80,7 @@ hideWordCount: true
 : *Stanford, CA, Nov 2023 -- Present*
 
 * *Pro bono* digital security and safety consultations for the Stanford community.
-* Speaking at BSidesSF 2025 about lessons from running this product security-focused clinic (18% acceptance rate).
+* Presented at BSidesSF 2025 about lessons from running this product security-focused clinic (18% acceptance rate).
 
 **Teaching Assistant and Infrastructure Lead** at Stanford University (via [Stanford Internet Observatory](https://io.stanford.edu))
 : *for INTLPOL 268 Hack Lab taught by Alex Stamos and Riana Pfefferkorn, Sep 2022 -- Dec 2022*
@@ -167,6 +167,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Lessons from Running a Product Security Clinic](/files/talks/20250427-security-clinic-lessons.pdf). *[BSidesSF 2025](https://bsidessf.org) (w/ [Joey Holtzman](https://joeyholtzman.com/))*, April 27, 2025.
 * [Teaching Cloud Infrastructure in an Undergraduate CS Program](/files/talks/20250301-teaching-cloud-infrastructure.pdf). *[SIGCSE TS 2025](https://sigcse2025.sigcse.org/) (w/ [Cody Ho](https://github.com/aesrentai))*, March 1, 2025.
 * [Web Hacking for Social Good](/files/talks/20240521-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 21, 2024.
 * [Ethical Web Hacking for Fun and (maybe) Profit](/files/talks/20240518-ethical-web-hacking.pdf). *Stanford Splash*, May 18, 2024.
