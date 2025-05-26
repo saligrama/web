@@ -29,12 +29,12 @@ hideWordCount: true
 **Software Engineering Intern** at [Lacework](https://www.lacework.com)
 : *San Jose, CA (remote), Jun 2022 -- Sep 2022*
 * Engineered end-to-end virtualization of benchmarking system on Spark, reducing data import time by 20x vs. Snowflake.
-* Contributed enhanced Snowflake and Spark parsing support to [SQLGlot](https://github.com/tobymao/sqlglot), an open-source SQL parser and transpiler. 3 PRs merged.
+* Contributed enhanced Snowflake and Spark parsing support to [SQLGlot](https://github.com/tobymao/sqlglot), an open-source SQL parser and transpiler.
 
 **Engineering Intern** at [Uptycs](https://www.uptycs.com)
 : *Waltham, MA (remote), Nov 2020 -- Apr 2021*
 * Wrote and deployed production feature to Osquery monitoring software to inspect and detect malware in Java packages.
-* Functionality used to detect and patch client software with Log4Shell vulnerabilities (10.0 CVSSv3 base score CVE).
+* Functionality used to detect and patch client software with Log4Shell vulnerabilities.
 * Code now [open-source](https://github.com/uptycslabs/uptycs_osquery_extensions/tree/master/extension_java_packages).
 
 **Head of Infrastructure and Security** at [Medeloop](https://medeloop.ai)
@@ -156,6 +156,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 *Note: these posts were selected due to their exploration and synthesis of infrastructure and security techniques, providing a guide for future related work.*
 
+* [Down the rabbit hole: Implementing SSH port forwarding over AWS Session Manager](https://www.joinformal.com/blog/down-the-rabbit-hole-implementing-ssh-port-forwarding-over-aws-session-manager/), February 7, 2025.
 * [How practical should computer science degrees be, anyway?](/blog/post/practical-skills-in-cs-degrees/), June 17, 2024.
 * [Reflections on teaching a Stanford cloud course](/blog/post/infracourse-reflections/), May 22, 2024.
 * [What infra do you need for an infra course?](/blog/post/infracourse-infra/), May 2, 2024.
@@ -167,13 +168,14 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Monitoring and Constraining the Bananas VS Code SSH Extension](/files/talks/20250516-vscode-ssh.pdf). *Stanford Applied Cyber Weekly Meeting (ACWM)*, May 16, 2025.
 * [Lessons from Running a Product Security Clinic](/files/talks/20250427-security-clinic-lessons.pdf). *[BSidesSF 2025](https://bsidessf.org) (w/ [Joey Holtzman](https://joeyholtzman.com/))*, April 27, 2025.
 * [Teaching Cloud Infrastructure in an Undergraduate CS Program](/files/talks/20250301-teaching-cloud-infrastructure.pdf). *[SIGCSE TS 2025](https://sigcse2025.sigcse.org/) (w/ [Cody Ho](https://github.com/aesrentai))*, March 1, 2025.
 * [Web Hacking for Social Good](/files/talks/20240521-web-hacking-for-social-good.pdf). *[CS 106S](https://web.stanford.edu/class/cs106s) Week 8 (w/ [Cooper de Nicola](https://github.com/cdenicol))*, May 21, 2024.
 * [Ethical Web Hacking for Fun and (maybe) Profit](/files/talks/20240518-ethical-web-hacking.pdf). *Stanford Splash*, May 18, 2024.
 * [Internet Protocols and Network Security](/files/talks/20240517-internet-protocols-network-security.pdf). *[CS 155](https://cs155.stanford.edu) Section 7*, May 17, 2024.
 * [Intro to Ethical Web Hacking](/files/talks/20240426-intro-ethical-hacking.pdf). *Stanford Admit Weekend*, April 26, 2024.
-* [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). *Stanford Applied Cyber Weekly Meeting (ACWM)*, March 8, 2024.
+* [Fundamentals and Footguns of Cloud Security](/files/talks/20240308-cloud-security.pdf). *ACWM*, March 8, 2024.
 * [Reflections on a Quarter of Security Clinic](/files/talks/20231215-security-clinic.pdf). *ACWM (w/ [Miles McCain](https://miles.land))*, February 16, 2024.
 * [About the Stanford Security Clinic](/files/talks/20231215-security-clinic.pdf). *Stanford CERT (w/ Miles McCain)*, December 15, 2023.
 * [Stanford Applied Cyber Intro Security Workshop](/files/talks/20231013-intro-security-workshop.pdf). *ACWM*, October 13, 2023.
