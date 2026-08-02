@@ -1,0 +1,28 @@
+{{- $page := .page -}}
+{{- $description := .description -}}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+
+<meta property="og:site_name" content="{{ site.Title }}" />
+<meta property="og:title" content="{{ $page.Title }}" />
+<meta property="og:type" content="{{ if $page.IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ $page.Permalink }}" />
+{{- with $description }}
+<meta property="og:description" content="{{ . }}" />
+{{- end }}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $page.Title }}" />
+{{- with $description }}
+<meta name="twitter:description" content="{{ . }}" />
+{{- end }}
+
+{{- if $page.IsPage }}
+  {{- if not $page.PublishDate.IsZero }}
+<meta property="article:published_time" {{ $page.PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{- else if not $page.Date.IsZero }}
+<meta property="article:published_time" {{ $page.Date.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{- end }}
+  {{- if not $page.Lastmod.IsZero }}
+<meta property="article:modified_time" {{ $page.Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{- end }}
+{{- end }}

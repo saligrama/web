@@ -1,0 +1,8 @@
+{{ with site.Params.social }}
+  <p class="social">
+    {{ range $i, $link := . }}
+      {{ if $i }}<span class="sep">/</span>{{ end }}
+      <a href="{{ $link.url }}"{{ if hasPrefix $link.url "http" }} rel="me"{{ end }}>{{ $link.name }}</a>
+    {{ end }}
+  </p>
+{{ end }}

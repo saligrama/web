@@ -18,7 +18,7 @@ This post covers my exploration of Gradescope's autograder vulnerabilities, an a
 
 <!--more-->
 
-# Intro: how Gradescope's autograder works
+## Intro: how Gradescope's autograder works
 
 Gradescope uses short-lived Docker containers hosted on AWS to test and grade student code submissions. Every time a student submits code, Gradescope spins up a new Docker container used to score that submission.
 
@@ -44,7 +44,7 @@ Another thing to note is that many autograder clients score student code by impo
 
 For more information, refer to [Gradescope's autograder documentation](https://gradescope-autograders.readthedocs.io/en/latest/manual_docker/).
 
-# Exploring autograder vulnerabilities
+## Exploring autograder vulnerabilities
 
 Within the above flow, Gradescope's default autograder setup does not implement any kind of security restrictions and trusts arbitrary student code entirely.
 
@@ -60,7 +60,7 @@ In my February 2023 testing of Gradescope's Ubuntu 22.04 base Docker image and a
 
 For my testing, I created a test course called *RCE 101: Introduction to Remote Code Execution* deploying Gradescope's example Python calculator assignment and associated autograder client code.
 
-## Reverse shell and hidden test case exfiltration
+### Reverse shell and hidden test case exfiltration
 
 It's not particularly difficult to get a root reverse shell on a Gradescope autograder Docker container. Since there is no firewall or other network request blocking on the Docker container or its host, we can make arbitrary outbound network requests, including creating reverse shells.
 
@@ -89,7 +89,7 @@ This also allows us to exfiltrate test cases that would otherwise be hidden (we 
 
 {{< figure src="images/gradescope-test-exfil.png" alt="Gradescope hidden test case exfiltration" position="center" style="border-radius: 8px;" caption="Gradescope hidden test case exfiltration" captionPosition="center" >}}
 
-## Editing autograder results
+### Editing autograder results
 
 Since the client code's output file `/autograder/results/results.json` is treated as a trusted source of truth, we can modify our own grades as long as our write to that file takes effect after the client code's final write. In particular, we want to write the JSON string `{"score": 999.0}` to the file.
 
@@ -176,7 +176,7 @@ subprocess.Popen(["/autograder/source/write_inotify"], start_new_session=True)
 
 This, again, gives me a 999%.
 
-# Impact
+## Impact
 
 The impact of these vulnerabilities are severe. With the ability to run arbitrary code as root, it's easy for students to change their own grades. Perhaps more problematically, students can leak hidden test cases intended to be reused across years. Depending on the application, it might be difficult or time-consuming for instructors to rewrite tests in response to the leaks.
 
@@ -194,7 +194,7 @@ This creates a need for an autograder that is at least resistant to the most obv
 
 This motivated my decision to create my own hardened autograder base.
 
-# Securescope: a more secure autograder
+## Securescope: a more secure autograder
 
 Gradescope claims difficulty in creating more secure autograder base images that integrate well with existing clients. I don't think this is an adequate excuse to not offer *any* security features for clients to take advantage of.
 
@@ -215,7 +215,7 @@ These features are switched off by default such that client autograders can simp
 
 When client code uses each of these features effectively, this addresses all of my above demonstrated attacks. **There are certainly remaining exploitable attack surfaces past these mitigations. True security is only possible when client code and student code are run by different processes with different user privileges.**
 
-## Testing
+### Testing
 
 Beyond testing Securescope with the example Python calculator assignment, I also subjected Securescope to a more real-world test. Having taken the *CS 255 Introduction to Cryptography* course at Stanford last year, I was able to get access to that course's autograder client code (with TA permission) for a project implementing a simple password manager in NodeJS. I then replaced the autograder base image with Securescope, turning on and integrating each of the security features into the autograder client code (which only took about 20 minutes). 
 
@@ -263,7 +263,7 @@ This attack was prevented by the nonce verification process:
 
 Having tested Securescope's additional security features against attacks written in both Python and NodeJS, I now feel more confident making claims about Securescope's security properties.
 
-# Conclusion
+## Conclusion
 
 Gradescope's default autograder configuration provides no security features by default, allowing all sorts of attacks including test case exfiltration and grade modification. Gradescope has known this for several years, but has claimed that providing a general-purpose fix is too difficult.
 

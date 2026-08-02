@@ -18,15 +18,15 @@ Wrapping up the quarter, I'm thrilled with how the course turned out, even given
 
 <!--more-->
 
-# Course motivation
+## Course motivation
 
 The idea to teach a course about cloud infrastructure first came to me in Spring 2023 arising from my work with the Stanford entrepreneurial community over the last few years. Stanford startups, particularly those in the consumer social space, have historically had a [poor](https://stanforddaily.com/2019/11/19/queer-chart-startup-exposes-student-data/) track [record](https://stanforddaily.com/2020/08/13/vulnerability-in-link-website-may-have-exposed-data-on-stanford-students-crushes/) with [security](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/). Since 2021, I've disclosed critical security vulnerabilities to over 20 startups marketing at Stanford, and have helped numerous more through the [Stanford Security Clinic](https://securityclinic.org).
 
-More than just finding vulnerabilties, however, this process also gave me a window into the infrastructure deployment topology of many of these startups. The mode tech stack was far and away React single-page applications and React Native mobile apps that were thin clients over a Firebase backend-as-a-service -- a [foot cannon](/blog/post/firebase-insecure-by-default) that makes achieving security with common data models difficult, but it also ties the app's entire functionality and logic to that specific BaaS provider. When Firebase no longer makes sense for an app -- often for cost, security, or data modeling reasons -- migrating to a more industry-standard architecture can be an ordeal.
+More than just finding vulnerabilties, however, this process also gave me a window into the infrastructure deployment topology of many of these startups. The mode tech stack was far and away React single-page applications and React Native mobile apps that were thin clients over a Firebase backend-as-a-service -- a [foot cannon](/blog/firebase-insecure-by-default) that makes achieving security with common data models difficult, but it also ties the app's entire functionality and logic to that specific BaaS provider. When Firebase no longer makes sense for an app -- often for cost, security, or data modeling reasons -- migrating to a more industry-standard architecture can be an ordeal.
 
 And beyond Firebase, we'd also seen many suboptimal infrastructure and architecture configurations -- for example, the use of hosted GraphQL providers when that transport protocol made no sense for the given application, or PHP/Laravel stacks with MySQL on the same compute instance.
 
-Given our prior experience -- beyond security and infrastructure-focused internships at cloud-native tech companies, I led infrastructure for a [Stanford course](/blog/post/hack-lab-got-hacked) and a [startup](https://medeloop.ai), and Cody has been instrumental in building up the [Applied Cyber](https://applied-cyber.stanford.edu) competition test range -- we came up with the idea to teach a course focusing on architecting robust application deployments on the public cloud. We hoped such a course could inform students about the cloud resources available in deploying applications, and to be able to use those resources using best-practice architectures and techniques.
+Given our prior experience -- beyond security and infrastructure-focused internships at cloud-native tech companies, I led infrastructure for a [Stanford course](/blog/hack-lab-got-hacked) and a [startup](https://medeloop.ai), and Cody has been instrumental in building up the [Applied Cyber](https://applied-cyber.stanford.edu) competition test range -- we came up with the idea to teach a course focusing on architecting robust application deployments on the public cloud. We hoped such a course could inform students about the cloud resources available in deploying applications, and to be able to use those resources using best-practice architectures and techniques.
 
 Beyond startups, we reasoned that such skills would be useful to any technical career. Nearly every tech company today uses the public cloud in some way; any Stanford graduate entering the software engineering workforce will reasonably be expected to work with the cloud. The public cloud features heavily in academic computer science research as acquiring compute resources isn't subject to hardware lead times.
 
@@ -36,7 +36,7 @@ Anyone else -- and especially a "typical" CS graduate going into software engine
 
 Given this context, we recognized the need for a course that teaches basic cloud fluency. In focusing on teaching cloud deployment skills in a hands-on way to students with existing software development background, we knew we would be doing something completely new -- but we felt up to the challenge.
 
-# Prototyping the initial course structure
+## Prototyping the initial course structure
 
 We knew that teaching a student course was something realistically achievable as Stanford CS coterm (BS + MS) students. After all, at the time, our friend [Akshay Srivatsan](https://aks.io) was in the middle of teaching [CS 45](https://cs45.stanford.edu) *Software Tools Every Programmer Should Know*, an introductory course on development environments and essential tools.
 
@@ -60,7 +60,7 @@ Originally, we envisioned giving students a base application that they could dep
 
 We also added a final project where students could demonstrate their understanding of the course material through the deployment of any application of their choice.
 
-# The course approval process
+## The course approval process
 
 Once we had our initial syllabus, we first shopped it with some friends for feedback -- shoutout to [Nathan Bhak](https://github.com/nbhak), [Glen Husman](https://github.com/glen3b), [Miles McCain](https://miles.land), and [Akshay Srivatsan](https://aks.io) for suggestions on lecture and assignment content, as well as course policy. [Ben Tripp](https://www.linkedin.com/in/benjamin-tripp/) also agreed to be our teaching assistant, and he was instrumental in making this course succeed.
 
@@ -74,7 +74,7 @@ Winter quarter enrollment day was Wednesday, November 29, and this would be the 
 
 With our initial course cap of 50 students, we were able to fill the course up from just the first seven enrollment groups (i.e., before any sophomores or freshmen were able to register based on priority). After negotiating for a larger room and increasing our course cap, we had enrolled 60 students with 21 on the waitlist at our peak.
 
-# Building out the course
+## Building out the course
 
 By the time we had our course approval in hand, we were already hard at work building out some of the technical aspects of the course. For me, this involved creating the backend for [Yoctogram](https://github.com/infracourse/yoctogram-app), a minimal image-sharing web application that would be used by students as the primary deployable for assignments. 
 

@@ -10,7 +10,7 @@ categories: []
 aliases: [/blog/post/dodging-oauth-origin-restrictions]
 ---
 
-In my [last post](/blog/post/firebase-insecure-by-default), I covered the marvelous world of Firebase database spelunking: when app developers misconfigure their Firestore security rules, the resulting ability to perform unauthorized data accesses can lead to terrifying data breaches for those apps. Thanks to tools like [Baserunner](https://github.com/iosiro/baserunner), testing apps for such misconfigurations is easier than ever.
+In my [last post](/blog/firebase-insecure-by-default), I covered the marvelous world of Firebase database spelunking: when app developers misconfigure their Firestore security rules, the resulting ability to perform unauthorized data accesses can lead to terrifying data breaches for those apps. Thanks to tools like [Baserunner](https://github.com/iosiro/baserunner), testing apps for such misconfigurations is easier than ever.
 
 By saving authorization state when logging into Firebase databases using email/password or phone/OTP sign-in methods, Baserunner lets you focus on actually querying the database for data. However, what happens when client apps only allow sign-in using a Google account?
 
@@ -18,7 +18,7 @@ This blog post covers how [Glen Husman](https://github.com/glen3b) and I conduct
 
 <!--more-->
 
-# Conducting security testing on a Google OAuth-only Firebase app
+## Conducting security testing on a Google OAuth-only Firebase app
 
 The motivation for this exploration was a security inspection that [Glen Husman](https://github.com/glen3b) and I conducted in February 2022 on a Stanford student-created website that stored some moderately sensitive user data. The site was a Javascript single-page application (SPA) backed by a Firebase database that only allowed Google sign-in via Firebase authentication.
 
@@ -26,11 +26,11 @@ We found minor issues relating to Firebase security rule misconfigurations leadi
 
 To respect the student's and app's request for anonymity, I won't disclose any further details about the engagement, and the examples I use will relate to a demo app I created solely for this post.
 
-# A brief background on OAuth
+## A brief background on OAuth
 
 OAuth is an protocol meant to delegate access between applications that decouples authentication from authorization. That is, the identity and authorization provider (e.g., Google) can be a different entity from the application the user is actually logging into (e.g., Notion). Furthermore, OAuth usage can be scoped to allow the requesting application to access data owned by the identity provider.
 
-## OAuth vocabulary and basic flow
+### OAuth vocabulary and basic flow
 
 * **Client Application/Relying Party**: An application which receives delegated authorized access from another server, or relies on another server for authentication. In our case, the Firebase database.
 * **Authorization Server/Identity Provider (IdP)**: Server that conducts a sign-in flow that allows the user to authenticate, and on which the user consents to authorizing the app. In our case, Google.
@@ -41,7 +41,7 @@ To explain the flow as simply as possible, a client application will make a requ
 
 For more information, refer to this [blog post](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth) by Okta and the [official OAuth documentation](https://oauth.net/articles/authentication/).
 
-## OAuth security flows
+### OAuth security flows
 
 Here's a potential security problem with OAuth: suppose that our favorite example banking site `https://bank.com` supports logging in with OAuth using Google as an authentication provider. When a user (Alice) goes through the Google sign-in flow on `bank.com`, `bank.com` is provided a token used to authorize access to Alice's data on `bank.com`, which is then passed to her browser.
 
@@ -51,13 +51,13 @@ However, suppose `b4nk.com` identifies itself to Google as `bank.com` using the 
 
 Thus, applications themselves must have some way of authenticating themselves to the identity provider such that only legitimate applications can request access tokens for their sites.
 
-### 3-legged flow
+#### 3-legged flow
 
 A traditional web application will typically feature a client and a dedicated application server; the three "legs" are the user's browser (and therefore the frontend client), the application server, and the authorization (IdP) server. This means that the application server is capable of holding secrets that can be used to authenticate the application itself to the identity provider.
 
 When an OAuth sign-in flow is conducted, the application will pass along its client secret to the identity provider, which will only return the access token if the client secret can be verified.
 
-### 2-legged flow
+#### 2-legged flow
 
 In contrast, a JS SPA is a case where all requests are made from the user's browser; i.e. there is no application server that can hold a client secret. But such an application can still fall prey to the phishing attack mentioned earlier.
 
@@ -81,11 +81,11 @@ To cite [Zakir Durumeric](https://zakird.com/)'s excellent [web security](https:
 
 This effectively stops the phishing attack: `https://b4nk.com` is a different origin than `https://bank.com`, so the identity provider can block the request rather than responding with an access token.
 
-# Signing into a Firebase database with Google OAuth
+## Signing into a Firebase database with Google OAuth
 
-For more details on exploiting Firebase misconfigurations, including a case study, please refer to my [last post](/blog/post/firebase-insecure-by-default).
+For more details on exploiting Firebase misconfigurations, including a case study, please refer to my [last post](/blog/firebase-insecure-by-default).
 
-## The Firebase OAuth sign-in flow
+### The Firebase OAuth sign-in flow
 
 Recall that to make requests against a Firebase database, we need a set of API tokens found on the client side, as well as an authorization header. For an SPA, the former is easily found by inspecting the minified JS source code of the page.
 
@@ -103,7 +103,7 @@ But with Google OAuth sign-in, the process is a little more complicated:
 
 As Baserunner did not support this flow when Glen and I first investigated a Google OAuth-only Firebase client app, we had to cobble this together ourselves.
 
-## Demo setup
+### Demo setup
 
 To demonstrate this process, I created a demo Firebase project that only accepts Google sign-in. Note that I've taken this down by now, so trying to hit this endpoint will get you nowhere. The API tokens were as follows; again, you can find these from the JS source code of an SPA.
 
@@ -125,7 +125,7 @@ I then created a user account for the project backed by my Google account (`adit
 
 The objective here is to get the Google OAuth token for `aditya@saligrama.io` corresponding to the demo app that can then produce a Firebase authorization header. This can then be used in a Node.js script to query the database.
 
-## Attempt 1: running a local web server
+### Attempt 1: running a local web server
 
 As OAuth is a communication protocol between web applications, we need to actually be running a web server to try to get the OAuth token. Let's use the simplest possible option: Python's `http.server` module, serving a simple HTML and Javascript page.
 
@@ -179,7 +179,7 @@ Clicking on the button yields a pop-up with the Google sign-in flow; after succe
 
 Clearly, the issue was with the domain we were loading: `http://localhost:8080` is not a registered origin for the demo app. We've run up against the aforementioned origin restriction issue! Let's try using the Firebase project's domain itself.
 
-## Attempt 2: domain-jacking
+### Attempt 2: domain-jacking
 
 We now want to use `saligrama-oauth-demo.firebaseapp.com` as the domain. While this is a host with its own public IP address (`199.36.158.100` at the time of writing), we can tell our local machine to point the hostname to any IP address of our choosing (including the local host, `127.0.0.1`).
 
@@ -205,7 +205,7 @@ Now, we load this in our web browser, conduct the sign-in flow, and check the co
 
 Another failure. Maybe changing the scheme and port, using HTTPS over port 443, will help.
 
-## Attempt 3: HTTPS, where the S stands for Success
+### Attempt 3: HTTPS, where the S stands for Success
 
 Running a HTTPS server requires a little more legwork. First, we need to generate a self-signed SSL certificate:
 
@@ -272,9 +272,9 @@ We again go through the Google sign-in flow and check the console, which yields 
 
 I should note that I've seen some projects follow Firebase default settings to allow `http://localhost` (port 80) as an origin, which would shortcut the hostname and certificate process. However, I've also seen projects remove `localhost` as an acceptable origin once in production, so it's more reliable to use the actual Firebase project's domain over HTTPS as above.
 
-## Querying for data
+### Querying for data
 
-Now that we have the token, we can query the Firebase database for data using a Node.js script, similar to the [example](/blog/post/firebase-insecure-by-default/#conducting-security-testing-on-fizz) from my last post.
+Now that we have the token, we can query the Firebase database for data using a Node.js script, similar to the [example](/blog/firebase-insecure-by-default/#conducting-security-testing-on-fizz) from my last post.
 
 ```js
 // oauth-demo.mjs
@@ -319,7 +319,7 @@ Running the script, we get the desired data.
 { message: 'Spooky scary user data, send shivers down your spine' }
 ```
 
-# Contributing to Baserunner
+## Contributing to Baserunner
 
 Coincidentally, the lack of Google sign-in support was an [open issue](https://github.com/iosiro/baserunner/issues/2) in Baserunner for nearly 18 months. With what I'd learned from this engagement, I was able to add this support to Baserunner. This required adding a way to set the Google client ID on the frontend and dynamically generating a Google sign-in button based on that input client ID, then plumbing the resulting credential through to the saved Firebase state for login.
 
@@ -327,7 +327,7 @@ My [pull request](https://github.com/iosiro/baserunner/pull/12) was merged in Au
 
 {{< figure src="images/oauth-baserunner-success.png" alt="Succesful query using Baserunner" position="center" style="border-radius: 8px;" caption="Succesful query using Baserunner" captionPosition="center" >}}
 
-# Conclusion
+## Conclusion
 
 While Google sign-in can make it more difficult to sign into Firebase databases for exploratory purposes outside the official app context, it's not impossible, as this work shows. Bypassing the origin restriction enforced by the Firebase authentication requires some finagling, but I hope this post serves as a guide on how to do so.
 

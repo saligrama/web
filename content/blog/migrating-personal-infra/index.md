@@ -16,7 +16,7 @@ Recently, I decided to migrate as much of this infrastructure as I could to Clou
 
 <!--more-->
 
-# The Existing Infra State
+## The Existing Infra State
 
 I initially registered the `saligrama.io` domain from Namecheap in August 2018 under the [student discount program](https://nc.me) that allowed me to pay only $30 for the first year for a bundle including that and a `.me` domain. 
 
@@ -34,7 +34,7 @@ Another bit of infra that I had was a service that would generate [OpenGraph](ht
 
 {{< figure src="images/og-fake.png" alt="Dangerous Clickbait Title That Looks Authentic" position="center" style="border-radius: 8px;" caption="Dangerous Clickbait Title That Looks Authentic" captionPosition="center" >}}
 
-# Motivation
+## Motivation
 
 Compared to more modern solutions, GitHub Pages is fairly limited.
 
@@ -53,7 +53,7 @@ Moreover, given my Namecheap domain discount expired several years ago, I wasn't
 
 Moving to Cloudflare also gave me the opportunity to deploy everything using Terraform for infrastructure-as-code, which would let me more systematically manage the state of the infrastructure.
 
-# Migrating to Cloudflare
+## Migrating to Cloudflare
 
 The migration process roughly went as follows:
 
@@ -67,7 +67,7 @@ The migration process roughly went as follows:
 
 Essentially, I set up the Cloudflare infrastructure in parallel to the existing Namecheap and GitHub infrastructure, only activating the former when fully set up in order to avoid downtime.
 
-## Setting up Terraform
+### Setting up Terraform
 
 This is a simple matter of creating a [new repository](https://github.com/saligrama/saligrama-io-tf) for the Terraform configuration to live and initializing the Cloudflare Terraform provider.
 
@@ -108,7 +108,7 @@ variable "cloudflare_account_id" {
 
 The `cloudflare_account_id` variable is obtainable from the Cloudflare dashboard, and we can generate the API token from the Cloudflare dashboard scoped to edit DNS records and Cloudflare Pages projects. These values should be saved as environment variables (i.e., `TF_VAR_cloudflare_api_token`, `TF_VAR_cloudflare_account_id`) in Spacelift.
 
-## Redeploying GitHub Pages sites on Cloudflare Pages
+### Redeploying GitHub Pages sites on Cloudflare Pages
 
 Cloudflare Pages is natively supported with the Cloudflare Terraform provider and has a GitHub integration to automatically deploy changes pushed to GitHub, so we just need to write some configuration to set this up. Here's the configuration for the main `saligrama.io` site and this `blog` site, though the setup looks identical for the other two.
 
@@ -209,7 +209,7 @@ export const onRequest: PagesFunction[] = [
 
 Note that at this point GitHub pages is still serving `saligrama.io`, since we haven't changed the DNS records to point to Cloudflare Pages.
 
-## Provisioning DNS
+### Provisioning DNS
 
 The next step is to set up DNS mirroring the existing records on Namecheap. The existing state of the Namecheap DNS records was as follows:
 
@@ -277,7 +277,7 @@ resource "cloudflare_record" "mx_aspmx_google_saligrama_io" {
 
 After applying this, the DNS records list on the Cloudflare dashboard for the `saligrama.io` zone looks exactly like the one on Namecheap.
 
-## Setting the Cloudflare zone as authoritative
+### Setting the Cloudflare zone as authoritative
 
 This is a simple ClickOps step. Cloudflare gives us the nameservers that we should plug in on the Namecheap console. In my case, these were `faye.ns.cloudflare.com` and `tim.ns.cloudflare.com`.
 
@@ -287,7 +287,7 @@ Here, we just change the "Nameservers" setting on the "Domain" tab in Namecheap 
 
 This took about ten minutes to activate, and Cloudflare helpfully emailed me to let me know that my zone was now active and authoritative. I continued unceremoniously receiving spam over the next few hours, which let me know my mail records hadn't broken.
 
-## Moving domain registration to Cloudflare
+### Moving domain registration to Cloudflare
 
 This is another ClickOps step in the Namecheap console. Under the "Sharing and Transfer" tab, we turn "Domain Lock" off, which sends us an email with an [Auth-Code](https://en.wikipedia.org/wiki/Auth-Code).
 
@@ -301,7 +301,7 @@ After paying the fee, it appeared that it would take several days for the domain
 
 {{< figure src="images/namecheap-expedite-transfer.png" alt="Expediting the domain transfer" position="center" style="border-radius: 8px;" caption="Expediting the domain transfer" captionPosition="center" >}}
 
-## Switching the apex DNS records to Cloudflare Pages
+### Switching the apex DNS records to Cloudflare Pages
 
 At this point Cloudflare was both my authoritative zone nameserver and my domain registrar, but the apex `saligrama.io` record was still pointing to GitHub pages. To serve `saligrama.io` from Cloudflare pages required changing some more DNS records in Cloudflare.
 
@@ -339,15 +339,15 @@ Since we already have Proxyflare set up for the subsites, there's no additional 
 
 Applying the Terraform configuration successfully switches the records to point to Cloudflare Pages.
 
-## Tearing down GitHub Pages resources
+### Tearing down GitHub Pages resources
 
 For every GitHub pages site, I simply clicked "Unpublish" under Settings > Pages, and then pushed a commit removing the GitHub actions build and publish workflow.
 
 I also removed the GitHub site verification record from Terraform, applying that configuration.
 
-# More Technically Involved Migrations
+## More Technically Involved Migrations
 
-## OpenGraph image generator
+### OpenGraph image generator
 
 As it turns out, one extra plugin that Cloudflare Pages supports is an [OpenGraph image generator](https://developers.cloudflare.com/pages/functions/plugins/vercel-og/) that conveniently is also backed by the same Vercel library I was using. Thus, I could port my service over by attaching it as a [middleware function](https://github.com/saligrama/blog/blob/main/functions/_middleware.tsx) within the blog Pages deployment.
 
@@ -357,7 +357,7 @@ The main advantage here was that the renderer only activates on existing blog po
 
 The primary technical difficulty here ended up being making the renderer access the IBM Plex Sans font. This required me to use Adobe Fonts to download the font file, and wrap the rendering `PagesFunction` in another `PagesFunction` so I could actually unwrap the `fetch` `Promise` when retrieving the font.
 
-## CatShare
+### CatShare
 
 By virtue of being hosted on a Digital Ocean droplet, CatShare was costing me $7/mo, or $84/yr. CatShare, as originally written, was a NodeJS service using Express, but the backend was "thin" in that there was no database dependency and it was mainly rendering static pages.
 
@@ -421,7 +421,7 @@ resource "cloudflare_record" "catshare_saligrama_io_cf_pages" {
 }
 ```
 
-## sad.singles
+### sad.singles
 
 [sad.singles](https://sad.singles) is a toy project. I'm intentionally going to avoid explaining what it does, because you should totally click the link :)
 
@@ -479,7 +479,7 @@ resource "cloudflare_pages_domain" "sadsingles" {
 
 Since the domain expiry date was coming up in the next few days, Glen also transferred me the domain registration, and this is also registered with Cloudflare now.
 
-# Reflections
+## Reflections
 
 This ended up being a fairly seamless migration. The key insight is that the recursive nature of DNS lends itself nicely to mirroring configurations over to Cloudflare and only executing the authoritative switchover step when everything looked good. This was done twice: with the zone authoritative nameservers and with the GitHub Pages to Cloudflare Pages migration.
 

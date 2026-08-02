@@ -1,83 +1,52 @@
 baseURL = 'https://saligrama.io'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Aditya Saligrama'
-theme = 'hugo-theme-hello-friend'
-googleAnalytics = true
 pluralizeListTitles = false
+disableKinds = ['taxonomy', 'term']
 
-paginate = 30
+[services.googleAnalytics]
+  ID = 'G-L56FWTBKBM'
 
 [params]
-  # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "post"
-  defaultTheme = ""
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 5
-  # Enable to show reading time in minutes for posts
-  showReadingTime = false
-  showWordCount = true
-  showLogo = true
-  showFooter = true
-  showCopyright = true
+  description = "Software engineer; security & infrastructure enthusiast; Stanford alum"
 
-  og = "/images/profile-photo.png"
-
-[markup.goldmark.renderer]
-  unsafe = true # Allow HTML in md files
+  [[params.social]]
+    name = "email"
+    url = "mailto:aditya@saligrama.io"
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/saligrama"
+  [[params.social]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/saligrama"
+  [[params.social]]
+    name = "x"
+    url = "https://twitter.com/saligrama_a"
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true # Allow HTML in md files
   [markup.highlight]
     noClasses = false
 
-[languages]
-  [languages.en]
-    [languages.en.params]
-      title = 'Aditya Saligrama'
-      subtitle = ""
-      keywords = ""
-      copyright = ""
-      menuMore = "Show more"
-      showMenuItems = 5
-      writtenBy = "Written by"
-      readMore = "Read more"
-      readOtherPosts = "Read other posts"
-      newerPosts = "Newer posts"
-      olderPosts = "Older posts"
-      minuteReadingTime = "min read"
-      dateFormatSingle = "January 2, 2006"
-      dateFormatList = "January 2, 2006"
-
-    [languages.en.params.logo]
-      logoText = "Aditya Saligrama"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "portfolio"
-        name = "Portfolio"
-        url = "/portfolio"
-        weight = 1
-      [[languages.en.menu.main]]
-        identifier = "blog"
-        name = "Blog"
-        url = "/blog"
-        weight = 2
-      [[languages.en.menu.main]]
-        identifier = "notes"
-        name = "Notes"
-        url = "/notes"
-        weight = 3
-      [[languages.en.menu.main]]
-        identifier = "photo"
-        name = "Photography"
-        url = "/photo"
-        weight = 4
-      [[languages.en.menu.main]]
-        identifier = "resume"
-        name = "Resume"
-        url = "/files/resume.pdf"
-        weight = 5
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "blog"
+    url = "/blog"
+    weight = 2
+  [[menu.main]]
+    identifier = "notes"
+    name = "notes"
+    url = "/notes"
+    weight = 3
+  [[menu.main]]
+    identifier = "photo"
+    name = "photos"
+    url = "/photo"
+    weight = 4
+  [[menu.main]]
+    identifier = "resume"
+    name = "resume"
+    url = "/resume"
+    weight = 5

@@ -1,0 +1,34 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
+
+{{ $description := site.Params.description }}
+{{ if not .IsHome }}
+  {{ with .Description }}
+    {{ $description = . }}
+  {{ else }}
+    {{ $description = $.Summary | plainify | truncate 200 }}
+  {{ end }}
+{{ end }}
+<meta name="description" content="{{ $description }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+{{ with resources.Get "css/main.scss" }}
+  {{ $css := . | css.Sass (dict "outputStyle" "compressed") | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
+{{ end }}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png" />
+<link rel="manifest" href="/ico/site.webmanifest" />
+
+{{ partial "opengraph.html" (dict "page" . "description" $description) }}
+
+{{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end -}}

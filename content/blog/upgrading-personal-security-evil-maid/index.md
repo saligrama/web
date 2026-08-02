@@ -10,13 +10,13 @@ categories: []
 aliases: [/blog/post/upgrading-personal-security-evil-maid]
 ---
 
-This is a continuation of my [previous post](/blog/post/upgrading-personal-security-web) about upgrading personal security. This post focuses on preventing [evil maid attacks](https://en.wikipedia.org/wiki/Evil_maid_attack) using disk encryption and secure boot.
+This is a continuation of my [previous post](/blog/upgrading-personal-security-web) about upgrading personal security. This post focuses on preventing [evil maid attacks](https://en.wikipedia.org/wiki/Evil_maid_attack) using disk encryption and secure boot.
 
 With this post, I compiled and summarized all of the resources I used to do all of this configuration. The hope is that having a set of steps in one place reduces the need to go hunting across different Reddit posts, blog posts, and wiki articles as I did.
 
 <!--more-->
 
-# Recap: physical threat model
+## Recap: physical threat model
 
 An evil maid attack is a situation where an attacker has physical access to a device. For now, the way I think about this scenario is that an attacker can have physical access to one of the following:
 
@@ -28,7 +28,7 @@ Even with any one of these devices in their possession, the adversary should nev
 
 **Disclaimer**: Full physical security is impossible to achieve on standard consumer laptops. This is a best effort using commonly available tools and methods, and will not protect against a determined (e.g. nation-state) adversary.
 
-# Recap: hardware
+## Recap: hardware
 
 To recap, I'll be using the following hardware for this post:
 
@@ -37,7 +37,7 @@ To recap, I'll be using the following hardware for this post:
     - Initially, both the Linux and Windows partitions were unencrypted
 * Hardware security key: YubiKey 5C NFC
 
-# Stage three: Linux disk encryption with FIDO2/YubiKey authentication
+## Stage three: Linux disk encryption with FIDO2/YubiKey authentication
 
 These instructions will demonstrate how to encrypt the Linux partition in-place. If you were smarter than me when you initially set up the laptop and encrypted the disk, skip to the next step.
 
@@ -124,7 +124,7 @@ nvme0n1     259:0    0 476.9G  0 disk
 └─nvme0n1p5 259:5    0  1000M  0 part  
 ```
 
-## Disk decryption with FIDO2/YubiKey
+### Disk decryption with FIDO2/YubiKey
 
 Since `systemd` version 248 (March 2021), it has been [possible](https://0pointer.net/blog/unlocking-luks2-volumes-with-tpm2-fido2-pkcs11-security-hardware-on-systemd-248.html) to enroll a YubiKey as a way to do LUKS decryption at boot. Doing so only takes a few steps on your running system (no need for a live USB here).
 
@@ -143,7 +143,7 @@ Since `systemd` version 248 (March 2021), it has been [possible](https://0pointe
     ```
 4. Reboot, and you should be all set.
 
-# Stage four: evil maid hardening
+## Stage four: evil maid hardening
 
 Unfortunately, disk encryption is not enough to defend against an evil maid attack, even when the attacker only has at most a few minutes with your device. Up until now, the code running before you decrypt your disk during boot is both unencrypted (sitting on an unencrypted `/boot` partition) and unverified. 
 * This means that an attacker can replace your kernel (i.e. `/boot/vmlinuz-linux`) and/or initramfs (i.e., `/boot/initramfs-linux.img`) with a backdoored one, which can, for example, steal your LUKS decryption passphrase with a keylogger.
@@ -168,7 +168,7 @@ As such, treat the following instructions as specific to my laptop (a Lenovo Thi
 
 **Disclaimer**: I AM NOT RESPONSIBLE FOR ANY DATA OR EQUIPMENT LOSS YOU MIGHT ENCOUNTER FOLLOWING THESE INSTRUCTIONS.
 
-## Preparation: booting from a unified kernel image
+### Preparation: booting from a unified kernel image
 
 A [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image) is a compilation containing the following:
 * UEFI bootloader executable
@@ -197,7 +197,7 @@ Setting one up and configuring your system to boot from it is not particularly d
 4. Reboot and make sure that you have two new entries in your `systemd-boot` menu: one for Arch Linux, and one for Arch Linux fallback
 5. You can now safely remove `/boot/loader/entries/arch.conf`.
 
-## Enrolling your key into secure boot
+### Enrolling your key into secure boot
 
 Doing this used to be an [extremely painful process](https://linderud.dev/blog/improving-the-secure-boot-user-experience/), but luckily the `sbctl` tool makes this significantly easier. 
 
@@ -248,14 +248,14 @@ pacman -S linux
 
 9. Test booting into Arch, Arch fallback, and Windows. All should succeed without issues.
 
-## Securing the Windows partition with BitLocker
+### Securing the Windows partition with BitLocker
 
 At this point we can go ahead and simply enable BitLocker in Windows settings. Why did we need to wait this long?
 * The modern BitLocker implementation uses the [hardware trusted platform module](https://en.wikipedia.org/wiki/Trusted_Platform_Module) (TPM) to store the disk decryption key.
 * Windows requires everything in the boot chain to be signed before it can retrieve the key from the TPM. This requires secure boot to be enabled.
 * Without secure boot, we would be prompted for a long, randomly generated recovery password every single time we wanted to start Windows.
 
-## Setting a UEFI password
+### Setting a UEFI password
 
 We're not quite done yet: with access to the UEFI interface, an attacker could simply turn secure boot off, completely nullifying all the work we just did.
 
@@ -264,13 +264,13 @@ Nearly every UEFI implementation allows setting a password, so go ahead and do s
 * We want to prevent an attack where the adversary can boot an Ubuntu or Fedora LiveUSB (whose loaders are Shim, trusted with Microsoft's key), and then plant Shim, a signed kernel, and a backdoored initramfs on the unencrypted boot partition.
     - Protecting the boot list both prevents an adversary from booting a LiveUSB and from being able to boot Shim once the attack is carried out.
 
-## Finishing up: disabling Windows recovery
+### Finishing up: disabling Windows recovery
 
 Lastly, in Windows, we want to [disable the recovery environment](https://www.windowscentral.com/how-enable-windows-recovery-environment-windows-10), which allows manipulating boot priority or booting to a USB.
 * This is pretty simple.
 * Open Command Prompt as administrator and run `reagentc /disable`.
 
-# Closing
+## Closing
 
 At this point, you should be reasonably protected from Evil Maid attacks. An adversary would probably need to carefully manipulate the boot priority list in the NVRAM in order to have any chance at mounting an attack. This requires a flash programmer and lots of time.
 

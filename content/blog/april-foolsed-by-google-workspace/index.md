@@ -17,7 +17,7 @@ Unfortunately, due to a Google Workspace footgun, it didn't take long for my fri
 
 <!--more-->
 
-# The lawsuit threat letter
+## The lawsuit threat letter
 
 Before describing my prank orchestration, I do want to attach the fake threat letter I sent, as I was surprisingly happy with the output from a one-shot ChatGPT prompt. I included myself as one of the recipients of the threat to cover my tracks.
 
@@ -68,11 +68,11 @@ Before describing my prank orchestration, I do want to attach the fake threat le
 > Peregrine Stratagem, Inc. \
 > CC: Internal Morale Assurance
 
-# Orchestrating the prank
+## Orchestrating the prank
 
 I timeboxed my prank orchestration (i.e., sending the mail in a way that best hid that it came from me) to my ~45 minute Caltrain commute this morning.
 
-## Domain acquisition
+### Domain acquisition
 
 ChatGPT gave me a corporate name and domain, so to truly commit to the bit I of course had to actually register the domain name and send the letter from `legal@`. Fortunately, `peregrinestratagem.com` was only about $10 for a year, so I bought it on the spot from [Cloudflare](../migrating-personal-infra). Cloudflare defaults to redacting WHOIS information for newly acquired domains, so I figured I was safe there:
 
@@ -103,7 +103,7 @@ Registrant Fax Ext: DATA REDACTED
 ...
 ```
 
-## Email account setup
+### Email account setup
 
 The easiest way for me to send mail from this domain was to simply add it as a [user alias domain](https://support.google.com/a/answer/7502379?hl=en) in my `saligrama.io` Google Workspace. Using this feature, any primary email address and aliases on `saligrama.io` get aliased to `peregrinestratagem.com` -- thus, I could create `legal@saligrama.io` as an alias for `aditya@saligrama.io` and then `legal@peregrinestratagem.com` would automatically alias to `aditya@saligrama.io` as well.
 
@@ -111,7 +111,7 @@ Configuring this was very easy: after I bought the domain on Cloudflare, I simpl
 
 Because I'd configured `legal@peregrinestratagem.com` as both a sending and receiving alias, and because there were actual `MX` and `TXT` records for the domain, I expected the email would authentically look like it was coming from `legal@peregrinestratagem.com` with no hint of `aditya@saligrama.io`.
 
-## Sending the email, then quickly getting busted
+### Sending the email, then quickly getting busted
 
 Confident in my belief that it'd be difficult to figure out I was sending the fake threat, I blasted it out to my friends. At first, I got some "fell for it" responses.
 
@@ -146,7 +146,7 @@ Return-Path: aditya@saligrama.io
 
 {{< figure src="images/jig-is-up.png" alt="My friends quickly discovered it was me" position="center" >}}
 
-# The Google Workspace footgun
+## The Google Workspace footgun
 
 So where had I gone wrong?
 
@@ -159,7 +159,7 @@ As it turns out, Google Workspace derives the domain name for SPF, DKIM, and DMA
 
 The only native mitigation appears to be to use separate Google Workspace accounts for each domain, which was infeasible given my time and cost constraints for this project.
 
-# Conclusion
+## Conclusion
 
 In retrospect, I could have better covered my tracks by using a dedicated email relay service (e.g., Mailgun, Cloudflare Email Routing) that could have masked the domain mismatch. However, that would have probably taken much more time than I had available for this bit. The silver lining was that my friends didn't have to stress out too long about the fake threat.
 

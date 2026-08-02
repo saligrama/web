@@ -5,7 +5,6 @@ import vercelOGPagesPlugin from "@cloudflare/pages-plugin-vercel-og";
 interface Props {
   title: string
   date: string
-  wordCount: string
   inject: boolean
 }
 
@@ -20,7 +19,7 @@ export const genOGImage = async (context) => {
 
   return vercelOGPagesPlugin<Props>({
     imagePathSuffix: "og-image.png",
-    component: ({ title, date, wordCount }) => {
+    component: ({ title, date }) => {
       return (
         <div
           style={{
@@ -99,27 +98,6 @@ export const genOGImage = async (context) => {
               {date}
             </span>
           </div>
-
-          <div
-            style={{
-              right: 100,
-              bottom: 50,
-              position: 'absolute',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
-            <span
-              style={{
-                marginLeft: 8,
-                fontFamily: 'Inter',
-                fontSize: 20,
-                color: "#c76680"
-              }}
-            >
-              {wordCount}
-            </span>
-          </div>
         </div>
       )
     },
@@ -149,11 +127,6 @@ export const genOGImage = async (context) => {
         'meta[property="article:published_time"]': (props) => ({
           element(element: Element) {
             props.date = moment(element.getAttribute("content")).utcOffset(-8).format("MMMM D, YYYY") ?? "";
-          }
-        }),
-        'meta[property="article:word_count"]': (props) => ({
-          element(element: Element) {
-            props.wordCount = `${element.getAttribute("content")} words` ?? "";
           }
         }),
       }

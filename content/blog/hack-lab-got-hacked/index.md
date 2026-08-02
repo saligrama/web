@@ -16,7 +16,7 @@ This blog post describes our course's infrastructure setup (including why we had
 
 <!--more-->
 
-# Hack Lab's Google Cloud infrastructure
+## Hack Lab's Google Cloud infrastructure
 
 Hack Lab is Stanford's introduction to cybersecurity, cyberlaw, and cyber policy class, with nearly 180 students enrolled. This fall, I'm one of five TAs for the class, and I had the responsibility of building much of our course infrastructure on [Google Cloud (GCP)'s Compute Engine](https://cloud.google.com/compute) before the quarter started.
 
@@ -24,7 +24,7 @@ Why GCP? We need to provide students with tools for learning about cyber topics 
 
 This year, we decided to move those Kali VMs to the cloud to simplify our setup. Students can either use remote desktop or SSH to access the machines and use the security tools we've set up for them. Each machine has a public IP address attached, as well as a hostname via GCP's DNS support set up for easier access.
 
-## Setting up an EternalBlue lab
+### Setting up an EternalBlue lab
 
 This week's lab concerns buffer overflows and corporate intrusion, where students learn to use [Metasploit](https://www.metasploit.com/) to break into an EternalBlue-vulnerable Windows host. Each student gets their own vulnerable Windows Server 2008 virtual machine on a private subnet, which they learn how to gain administrator access on and find flags on the system that they use to pass the lab.
 
@@ -34,9 +34,9 @@ The real issue, in fact, was configuring our own GCP networks and firewalls to a
 
 Figuring these cloud nuances out took us much of the night of Sunday, October 9 into Monday, October 10, as well as much of Monday itself. Eventually we were able to get everything to work and published the lab on 1:30am Tuesday morning, before students had to start working on them at 8:30am. Luckily, students didn't seem to have major issues completing the lab that day.
 
-# Hack Lab gets hacked
+## Hack Lab gets hacked
 
-## Notification of a possible pwn
+### Notification of a possible pwn
 
 This morning, I woke up to three emails from GCP sent between the hours of 4:00am and 6:00am that notified us that our course infrastructure was used to conduct port scans against nearly 230,000 IP addresses for EternalBlue vulnerability.
 
@@ -48,7 +48,7 @@ In my sleep-addled state when I got up, my first thought was "this doesn't look 
 
 At that point I read the sentence that warned us about a machine being used to scan nearly 230,000 IP addresses between 12:40am and 2:50am, and it finally dawned on me that this couldn't possibly be a student and that something was up here.
 
-## A hurried incident response
+### A hurried incident response
 
 By now, it was nearly 9am and students would start using the machines again during the first lab section of the day at 10:30am. I called our head TA [Cooper de Nicola](https://github.com/cdenicola) so we could figure out what was going on, accidentally waking him after a few nights of less-than-satisfactory sleep (sorry Cooper :/). 
 
@@ -66,7 +66,7 @@ Thanks to the robust and maintainable infrastructure management code we built ou
 
 {{< figure src="images/ssh-mitm.png" alt="SSH man-in-the-middle warning" position="center" style="border-radius: 8px;" caption="SSH man-in-the-middle warning" captionPosition="center" >}} 
 
-## Turning the hack into a teachable moment
+### Turning the hack into a teachable moment
 
 Conveniently, this week at Hack Lab is when we teach about corporate intrusion, security research, and responsible disclosure in lecture. We decided we could use our own incident as a way of doing a public postmortem to our students and illustrating how to responsibly handle incidents like these. So Cooper and I got up on the stage of Dinkelspiel Auditorium and ate the humble pie.
 
@@ -74,6 +74,6 @@ Conveniently, this week at Hack Lab is when we teach about corporate intrusion, 
 
 In particular, we talked about how the breach happened, the (nonexistent) impact on students and their data, and how enterprises have an ethical obligation to inform their stakeholders about breaches once incidents are remediated. We feel that leading by example in this context is highly important given the less-than-stellar reputation of Stanford student startups with regards to properly handling vulnerability disclosures and other security incidents.
 
-# Conclusion
+## Conclusion
 
 This incident yields a couple of lessons for ourselves in the future here: always audit what infrastructure we have exposed to the public, and be extra careful running deliberately vulnerable services! In general, this hack demonstrates that breaches can happen to anyone, including the instructors of a cybersecurity class. As such, how one responds to a breach is as or more important than keeping things secure in the first place, and I'm pretty proud of our response here.

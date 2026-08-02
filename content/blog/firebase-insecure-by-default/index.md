@@ -18,13 +18,13 @@ Lastly, I talk about legal threats we received in the course of disclosing these
 
 <!--more-->
 
-# Intro
+## Intro
 
 With software and programming starting to become almost a lingua franca of today’s world, the state of tooling for app development has become better and better in recent years in terms of usability for new developers. One such tool is [Firebase](https://firebase.google.com/), Google’s flagship “backend-as-a-service” app platform. 
 
 Firebase’s big selling point for early-stage app development is that it abstracts away the need to write a full backend and maintain one’s own database. Firebase can handle [authentication](https://firebase.google.com/docs/auth) (including MFA and SSO solutions) and its document-structured [Cloud Firestore (CFS)](https://firebase.google.com/docs/firestore) and [Realtime Database (RTDB)](https://firebase.google.com/docs/database) datastore offerings allow significant flexibility in terms of the data they can store. This is extremely appealing to developers in an early or prototyping stage as data models can change frequently.
 
-# Firebase and data security
+## Firebase and data security
 
 As Firebase serves as the backend itself, clients such as web and mobile apps connect directly to both the authentication system and to the datastore itself using a set of API keys that are distributed with every client instance (i.e., every app download has the same set of Firebase API keys embedded in it). There is no programmatic authorization system for restricting which clients can see what data, as there would be in a traditional client-server-database model. 
 
@@ -49,11 +49,11 @@ In fact, a 2020 [report](https://www.comparitech.com/blog/information-security/f
 
 These Firebase issues represent a larger class of security vulnerabilities known as [HospitalGown](https://symantec-enterprise-blogs.security.com/blogs/expert-perspectives/symantec-discusses-securing-private-mobile-app-data-cloud), where client-side applications connect to a completely exposed backend that simply allow malicious users to query for data they should not have access to.
 
-# Anatomy of a Firebase data breach
+## Anatomy of a Firebase data breach
 
 The overarching idea of finding an unauthorized data access vulnerability in a Firebase client app is to pretend to be a client that can request anything from the datastore regardless of what data the real client queries for.
 
-## Becoming a Firebase client
+### Becoming a Firebase client
 
 To identify oneself as a client to Firebase involves using a set of API tokens of the following format:
 
@@ -87,7 +87,7 @@ It's not particularly difficult to find these tokens:
     - `PROJECT_ID`
     - `STORAGE_BUCKET`
 
-## Probing the datastore
+### Probing the datastore
 
 Once you have the API tokens, the easiest way to start spelunking around the database is to use [Baserunner](https://github.com/iosiro/baserunner), which allows you to set a Firebase config in JSON format for a particular app and then authenticate into that app if necessary. Authentication is supported via email/password, phone number/OTP, and via Google account (this was [my contribution](https://github.com/iosiro/baserunner/pull/12), and the motivation and implementation of this feature will be the subject of a future blog post).
 
@@ -103,7 +103,7 @@ However, if you're blindly guessing at names, keep in mind how [Cloud Firestore]
 
 Note that if you try to access an invalid data path, Firebase's client library used in Baserunner will always return a permission denied error. This is due to a security feature in Firebase that prevents distinguishing on the frontend if a data path is invalid or if security rules prevent the authenticated user from accessing that data path. To make sure your tooling is working, try accessing a data path that you know you should have access to (which you can probably find by inspecting web requests or Javascript minified source).
 
-# Case study: the Fizz vulnerabilities
+## Case study: the Fizz vulnerabilities
 
 [Fizz](https://fizzsocial.app), formerly Buzz, is an iOS-only social messaging platform for sharing posts and associated comments that’s popular at Stanford and other college campuses. The app is structured such that each user has an account that requires a community-affiliated email to verify membership, but can post anonymously. Users can accrue points based on the popularity of their posts.
 
@@ -111,7 +111,7 @@ Note that if you try to access an invalid data path, Firebase's client library u
 
 Owing to its purportedly anonymous nature, Fizz posts can often consist of highly sensitive information. For example, users often use the platform to talk about their LGBTQ+ identity, even while in family situations that are not supportive of said identity.
 
-## Conducting security testing on Fizz
+### Conducting security testing on Fizz
 
 In November 2021, [Miles McCain](https://miles.land), [Cooper de Nicola](https://github.com/cdenicola), and I did an [inspection](https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html) of Fizz's security posture and found significant data leakage due to the app's developers having misconfigured their Firebase security rules. 
 
@@ -151,7 +151,7 @@ Fizz's minimal security rules required a user session to be active when data is 
 
 However, the email associated with a user session did not need to be affiliated with a member community in order to access data. Thus, we were able to make temporary users with email `not-real-user-RANDOM@test.com` for each run of the script.
 
-## Pulling out the data
+### Pulling out the data
 
 We first requested the `users` collection; this contained the expected information such as emails, phone numbers, app points accrued, and moderator status. We noticed there was also a `userID` field and theorized that this field would be what connected the `users` and `posts` collections.
 
@@ -175,11 +175,11 @@ More concerning, however, was that we could easily promote the account to be a m
 
 {{< figure src="images/fizz_mod_remove_post_gone.png" alt="Removed post as mod" position="center" style="border-radius: 8px;" caption="Removed post as mod" captionPosition="center" >}}
 
-## Disclosure
+### Disclosure
 
 Concerned about user privacy and security — and consistent with [industry best practices](https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html#responsible-or-coordinated-disclosure) — we wrote a detailed email to the Fizz team on November 8, 2021 documenting the issues and explaining how to fix them. Given how fundamental this vulnerability was, we believe it is possible that it was noticed (and perhaps even abused) by others before we discovered it. We felt strongly that Fizz had an obligation to notify their users of the issue. In order to give Fizz enough time to resolve the vulnerability itself, we agreed not to publicly disclose the issue ourselves until December 8.
 
-### Fizz's response: initial courtesy, then a lawsuit threat
+#### Fizz's response: initial courtesy, then a lawsuit threat
 
 Fizz initially thanked us for our report, and they worked to fix the issue. Over the course of several emails, we thanked the Fizz team for handling our report well and advised them on the effectiveness of their fix. Things were looking good, and on November 22, Fizz let us know that they considered the original vulnerability fixed.
 
@@ -191,7 +191,7 @@ After the EFF’s letter was received, Fizz’s founders posted a public [securi
 
 Outside of some limited word-of-mouth communication, most Fizz users likely were not informed of how severe the vulnerabilities we found were until the Stanford Daily released its [article](https://stanforddaily.com/2022/11/01/opinion-fizz-previously-compromised-its-users-privacy-it-may-do-so-again/) about the situation nearly a year later.
 
-# Remediation and conclusions
+## Remediation and conclusions
 
 Firebase vulnerabilities are unfortunately all too common and can be quite devastating for certain business models, as the Fizz case study shows. Fizz was not the only app that we were able to find significant Firebase vulnerabilities in; we and other Stanford security researchers have identified this type of issue in numerous other startup apps.
 

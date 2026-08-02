@@ -16,7 +16,7 @@ With 50 students enrolled in CS 40 in Winter 2024 and only three members of the 
 
 <!--more-->
 
-# A typical CS course software stack
+## A typical CS course software stack
 
 In any Stanford CS course, you can usually expect to see the same few key EdTech software-as-a-service [products](https://twitter.com/itsandrewgao/status/1771408009388020080) being used to manage the class. Typically, these are:
 
@@ -29,7 +29,7 @@ To nobody's surprise, CS 40 used all of these components. We used Ed and Gradesc
 
 That said, to my knowledge, CS 40 is the only university course that focuses on hands-on deployments of web applications to the cloud using infrastructure-as-code (IaC). This created a number of interesting infrastructure challenges for us as instructors.
 
-# Yoctogram
+## Yoctogram
 
 Since web development expertise was beyond the scope of the course, we needed to have an example web app with both a backend and a frontend for students to deploy. Inspired by [this article on Instagram's early architecture](https://read.engineerscodex.com/p/how-instagram-scaled-to-14-million), we decided to build a minimal image-sharing app in its vein. 
 
@@ -41,7 +41,7 @@ Over the course of fall 2023, I steadily built out the [backend](https://github.
 
 For deployment, we wrote the IaC in [AWS CDK](https://aws.amazon.com/cdk/) using Python. To form the assignment starter code, we simply ripped out some sections from the finished code that we wanted students to write.
 
-# DNS delegation
+## DNS delegation
 
 That our assignments let students deploy publicly accessible cloud resources necessitated letting each student have a full domain name and control over their DNS zone. Using raw IP addresses may have worked in some cases, but we wanted all deployments to be accessible over HTTPS, since only offering unencrypted HTTP for a deployed web resource is *so 2014*.
 
@@ -55,7 +55,7 @@ To let students delegate a subzone of `infracourse.cloud` to their AWS Route 53 
 
 The source code for this utility is [public](https://github.com/infracourse/dns-provisioner).
 
-# Distributing AWS credits
+## Distributing AWS credits
 
 CS 40 made extensive use of AWS cloud resources, which have a reputation for being expensive. Of course, we didn't want students to incur any out-of-pocket costs for taking the course, and as such AWS graciously agreed to sponsor the class with $200 of credit per student.
 
@@ -63,7 +63,7 @@ From AWS we received an Excel spreadsheet with a credit code per student, which 
 
 Instead, we added functionality to the DNS provisioner that stored the codes in [Cloudflare KV](https://developers.cloudflare.com/kv/) and displayed a popup with a student's assigned code on login.
 
-# Autograding
+## Autograding
 
 With 50 students enrolled, hand-grading students' IaC submissions seemed like a frustrating endeavor. We wanted to therefore build an autograder with two main goals:
 
@@ -72,9 +72,9 @@ With 50 students enrolled, hand-grading students' IaC submissions seemed like a 
 
 Our code is [open-source](https://github.com/infracourse/iac-grader).
 
-## Static checks
+### Static checks
 
-To meet the first criterion, we first explored the option of using [CDK unit tests](https://docs.aws.amazon.com/cdk/v2/guide/testing.html). Unfortunately, this requires the grading code to import student code as a module and run it in its process, which is a bad idea for [reasons I've written about in the past](/blog/post/gradescope-autograder-security), especially in the context of Gradescope. 
+To meet the first criterion, we first explored the option of using [CDK unit tests](https://docs.aws.amazon.com/cdk/v2/guide/testing.html). Unfortunately, this requires the grading code to import student code as a module and run it in its process, which is a bad idea for [reasons I've written about in the past](/blog/gradescope-autograder-security), especially in the context of Gradescope. 
 
 From my time interning at Verkada in summer 2023, I'd learned about using [Open Policy Agent](https://www.openpolicyagent.org/) to enforce security policies (such as *make sure an S3 bucket denies public/anonymous access*) on IaC before production deployment. OPA supports evaluating policies over arbitrary JSON, and the output of synthesizing imperative CDK to CloudFormation declarative configuration is JSON, so this seemed like the right direction to go.
 
@@ -86,7 +86,7 @@ So we ended up back on Gradescope, with the limitation that student code couldn'
 
 We instead decided to have the `cdk synth` run within an [AWS Lambda](https://aws.amazon.com/lambda/), receiving the student-submitted CDK Python code in an HTTP request from the Gradescope grading container and responding with the synthesized CloudFormation JSON. Gradescope then ran our suite of OPA checks and outputted the grade.
 
-## Liveness checks
+### Liveness checks
 
 To meet the second criterion, we needed to have the grader interact with both the  backend and frontend of the deployed student app. Ensuring that the backend worked was fairly straightforward, as we could just call the API routes to register and log in with a randomly generated test user, upload an image, and retrieve the uploaded image. 
 
@@ -94,13 +94,13 @@ However, scoring the frontend was harder. Since the frontend was being served as
 
 Thus, we spun up a headless Chrome instance in the Gradescope grading container via [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/), which would browse to the student site and capture a screenshot. We then compared the [PDQ perceptual hash](https://about.fb.com/news/2019/08/open-source-photo-video-matching/) of the screenshot to a reference we had saved, and gave credit as long as a close match was detected.
 
-## Verifying usage of the Datadog console
+### Verifying usage of the Datadog console
 
 [Assignment 3](https://infracourse.cloud/assignments/3) had students integrate Datadog for better observability within their deployment. While we added some OPA checks to make sure students configured the Datadog ECS sidecar container properly in CDK, we also wanted to make sure that it was properly reporting logs, metrics, and profiles to Datadog without having access to student Datadog accounts.
 
 Given that AWS by default doesn't log HTTP requests made to an [Elastic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html), we decided to embed a randomized flag in an HTTP request header that would only be easy to find using Datadog. To do so, we added some more functionality to the DNS provisioner on Cloudflare where students could log in and generate the HTTP request, and we stored the generated flag in Cloudflare KV. Students then included the flag on submission, and we had another endpoint in the provisioner where the Gradescope grader could check that the submitted flag was correct for the student. 
 
-# Conclusion
+## Conclusion
 
 Building CS 40's course infrastructure wasn't just a necessity; it was fun for me too! While teaching, I would often joke that CS 40 ran more infra than an average small startup. In retrospect, building and teaching CS 40 allowed me to experiment with solving novel infrastructure and technical challenges, just as a startup would, but without immediate pressure to keep a company afloat at the same time too.
 
