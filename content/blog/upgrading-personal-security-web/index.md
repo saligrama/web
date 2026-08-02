@@ -16,13 +16,13 @@ In the last few weeks, I started to change that and significantly upgraded my pe
 
 <!--more-->
 
-# Threat model
+## Threat model
 
 Before delving into the details, we should take a moment to lay out a threat model -- the types of attacks that an attacker is permitted to perform and that our setup should be able to reasonably defend against. 
 
 This is important because an adversary with significant resources (e.g. a nation-state actor) will *always* win. If you have such a determined attacker trying to break into your system, then you probably have bigger problems than reading this blog post.
 
-## Remote threat model
+### Remote threat model
 
 This is the situation where an attacker doesn't have physical access to your system. Such an attacker's capabilities include:
 
@@ -36,7 +36,7 @@ This is the situation where an attacker doesn't have physical access to your sys
 
 An attacker, even with these tools, should not be able to get into our accounts. If an account or password has been compromised, our data and accounts on other services should still be protected.
 
-## Physical threat model
+### Physical threat model
 
 This is the situation where an attacker has physical access to a device (i.e. an [evil maid attack](https://en.wikipedia.org/wiki/Evil_maid_attack)). For now, the way I think about this scenario is that an attacker can have physical access to one of the following:
 
@@ -48,9 +48,9 @@ Even with any one of these devices in their possession, the adversary should nev
 
 Addressing the remote threat model will be the subject of this post, whereas the physical threat model will be addressed in part two.
 
-# Baseline setup
+## Baseline setup
 
-## Hardware
+### Hardware
 
 For this post, I'll be using the following hardware:
 
@@ -58,7 +58,7 @@ For this post, I'll be using the following hardware:
 * Phone: Apple iPhone 13 Pro Max
 * Hardware security key: YubiKey 5C NFC
 
-## Security misconfigurations
+### Security misconfigurations
 
 This is the fun part: detailing a number of missteps I've made with security in the name of convenience over the last several years.
 
@@ -72,7 +72,7 @@ This is the fun part: detailing a number of missteps I've made with security in 
     - Given physical access to an unencrypted laptop, an evil maid attack is extremely easy. A trivial example is to boot a live USB, mount the Linux root partition, and edit `/etc/passwd` and `/etc/shadow` to give yourself a backdoored user with root privileges.
     - Fully preventing an evil maid attack is difficult on Linux, as will be detailed later in this post, but it's not an excuse to have an unencrypted disk!
 
-# Stage one: fixing bad passwords
+## Stage one: fixing bad passwords
 
 The interesting bit here is generating a random secure password that's also reasonably fast to type (if not memorable). I use [`hsxkpasswd`](https://github.com/bbusschots/hsxkpasswd) on my laptop, which generates a random [XKCD-style](https://xkcd.com/936/) password with additional digit and special-character padding. A convenience script to do the generation is as follows:
 
@@ -91,11 +91,11 @@ Actually resetting the passwords is a simple, though tedious, game of whack-a-mo
 
 I started with banks, and then moved onto other services that stored financial information. This led to my [Twitter rant](https://twitter.com/saligrama_a/status/1519010724650971136) about airlines' poor digital security policies.
 
-# Stage two: consistently using 2FA
+## Stage two: consistently using 2FA
 
 At this point, there's no excuse to not use 2FA when a site offers it. This is especially true for anything that has access to financial information such as banks or credit card issuers.
 
-## Why FIDO2/WebAuthn 2FA is the way to go
+### Why FIDO2/WebAuthn 2FA is the way to go
 
 My strong preference for 2FA is to use the YubiKey to do [FIDO2/WebAuthn](https://www.yubico.com/authentication-standards/webauthn/)-based 2FA. 
 * Why this instead of SMS-based or authenticator/TOTP app-based 2FA?
@@ -105,7 +105,7 @@ My strong preference for 2FA is to use the YubiKey to do [FIDO2/WebAuthn](https:
 
 Unfortunately, the list of services supporting hardware security key-based authentication is mostly limited to big tech companies and security-focused products. For these services, adding a security key is fairly easy; you just follow the prompts in the service's security settings.
 
-## Securing TOTP 2FA behind a YubiKey, plus some phishing protection
+### Securing TOTP 2FA behind a YubiKey, plus some phishing protection
 
 For everything else, most services that support any 2FA do support TOTP-based authentication, and the YubiKey can store TOTP codes for use with such services. However, the TOTP code storage is limited to only 32 codes, even on the latest models such as my YubiKey 5C NFC (2020). As more and more services start to support 2FA, 32 TOTP codes will probably not cut it long-term.
 
@@ -115,7 +115,7 @@ Freshly adding Bitwarden TOTP is fairly easy for most services; you just go thro
 
 Migrating from Authy, my previous TOTP provider, is a different story, since Authy doesn't allow you to export TOTP secrets for use with a different service. Instead, you need to remove the Authy 2FA option from each service and add a new 2FA option for Bitwarden. Some websites make this extra annoying and force you to disable 2FA altogether and re-enable it in order to switch TOTP providers.
 
-## Bad (and nonexistent) 2FA implementations
+### Bad (and nonexistent) 2FA implementations
 
 Some services either only allow SMS-based 2FA, or force you to use SMS-based 2FA as a backup for TOTP or FIDO2/WebAuthn 2FA solutions. You're only as secure as your weakest backup -- so even if SMS 2FA isn't the primary 2FA method, as long as it exists as an option, you're still vulnerable to a SIM-swap attack. A non-exhaustive name-and-shame list from my personal experience:
 * Yahoo
@@ -131,10 +131,10 @@ Seriously, why do the financial services -- those with arguably the most sensiti
 Even worse are services that store financial information, yet have no support for any form of 2FA. In my experience this has mostly been airline frequent flyer programs -- again, refer to my [Twitter rant](https://twitter.com/saligrama_a/status/1519010724650971136) about all the security issues that airlines have.
 * As far as I know, Qantas, British Airways, and Singapore Airlines support 2FA. No US carriers do.
 
-# Closing
+## Closing
 
 At this point, we've significantly decreased our attack surface for a remote adversary. Our passwords are now truly random for every service, and every service with sensitive information on it (save for airline frequent flyer accounts) has some form of 2FA on it. When TOTP 2FA is needed, it's locked behind Bitwarden, which requires FIDO2/WebAuthn to log in.
 
 Unfortunately, this is not necessarily comforting when someone with physical access to your laptop can simply just reset your root password by booting from a USB stick, thereby gaining full compromise of your assets. 
 
-Preventing these attacks is the focus of the [next post](/blog/post/upgrading-personal-security-evil-maid).
+Preventing these attacks is the focus of the [next post](/blog/upgrading-personal-security-evil-maid).

@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ with resources.Get "images/profile-photo.jpg" }}
+    {{ $avatar := .Fill "168x168 Center q85" }}
+    <img
+      class="avatar"
+      src="{{ $avatar.RelPermalink }}"
+      width="84"
+      height="84"
+      alt="{{ site.Title }}"
+    />
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ partial "social.html" . }}
+{{ end }}

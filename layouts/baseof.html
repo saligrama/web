@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <div class="wrap">
+      {{ partial "masthead.html" . }}
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
+    {{ with site.Config.Services.GoogleAnalytics.ID }}
+      {{ partial "analytics.html" . }}
+    {{ end }}
+  </body>
+</html>

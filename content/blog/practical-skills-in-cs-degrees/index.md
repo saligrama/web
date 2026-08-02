@@ -17,7 +17,7 @@ Rather, I think that there are a number of seamless avenues for CS programs to i
 
 <!--more-->
 
-# The theory versus practice debate in context
+## The theory versus practice debate in context
 
 Usually, this kind of discourse starts with a Reddit post in a subreddit such as `/r/csMajors` or `/r/cscareerquestions`, with the OP typically worrying about how their CS curriculum didn't teach them enough practical skills to be able to apply what they learned to the real world. 
 
@@ -33,7 +33,7 @@ Over on Twitter, discourse on the latter post also got mixed in with the idea th
 
 These posts then spawn a decent bit of debate on whether university CS curricula should teach practical tools such as Git, web frameworks, or cloud services. 
 
-## The battle lines
+### The battle lines
 
 Of what I've seen so far, a number of popular arguments in favor of teaching practical tools include:
 
@@ -47,7 +47,7 @@ Whereas a sampling of arguments against might include:
 * The distinction between CS degrees and Software Engineering degrees is the focus on *theory* within a CS degree. If students want to learn practical skills, they should major in Software Engineering instead.
 * Introducing too many practical tools within a CS degree (or a university in general) cheapens them to no different than bootcamps, or trade/vocational schools.
 
-## Aside: the distinction between theory and fundamentals
+### Aside: the distinction between theory and fundamentals
 
 You might notice the emphasis I added on the word *theory* above. I think a lot of nuance in this discourse gets lost in the overloaded use of the word *theoretical* to describe a foundational approach to teaching CS. In CS, *theory* refers to a specific branch of the field concerned with the capabilities and limitations of computation -- the mathematical bounds on the kinds of problems various computing models can solve. 
 
@@ -59,7 +59,7 @@ I should also point out that a number of people in favor of keeping CS "theoreti
 
 This analogy breaks down, however, because natural sciences programs *do* teach their students the practical skills relevant to their field. Lab work is a significant component of any such degree, and students *do* learn how to use microscopes and any other specialized equipment that better furthers the foundations they learn in their lecture courses. To have students better be able to apply the foundational knowledge they learn in their CS classes, then, CS students should also learn relevant practical tools, just as natural sciences students do.
 
-# What should we expect from CS graduates?
+## What should we expect from CS graduates?
 
 Much of the discourse on the specific skills that should be taught in CS programs also veers into questioning what the goal of a CS program should be. Some think the primary role is to prepare graduates for industry software engineering careers, whereas others suggest it should only teach the natural foundations of the field similar to a math or natural sciences degree. 
 
@@ -67,7 +67,7 @@ But I think we can better answer the original question about course content thro
 
 Namely, each program aims to educate students on the fundamentals of CS in a way that allows them to apply these principles to real-world problems. Beyond just understanding the foundations of the field, students should also be able to design and implement real systems by drawing on their foundations and other skills they learn. Thus, the idea that CS programs should exhibit an ivory tower-like focus on the fundamentals in isolation is unfounded within the context of the educational objectives of these programs themselves.
 
-# Practical skills in support of CS fundamentals
+## Practical skills in support of CS fundamentals
 
 If we acknowledge that university CS programs do have a responsibility to help their students make practical use of the fundamentals they learn, we can consider how opportunities to do so can be (or already are) incorporated into existing CS courses. 
 
@@ -93,7 +93,7 @@ For example, [CS 106B](https://cs106b.stanford.edu) *Programming Abstractions* u
 
 Similarly, both CS 107 and [CS 111](https://cs111.stanford.edu) *Operating Systems Principles* use a Git-based submission mechanism, but obscure the fact that Git is what is being used under the hood. These courses could expose more of the Git functionality to students and teach them a little bit about version control in the process. 
 
-# Rethinking what counts as a CS fundamental
+## Rethinking what counts as a CS fundamental
 
 What I think has been most lost in the discourse has been the question of what we should actually consider to be a fundamental topic in CS. Proponents of keeping CS degrees foundational consider mathematical, algorithmic, and systems principles to be fundamental to the field; therefore, any other concepts taught within a CS degree are merely auxiliary. To be somewhat charitable to this argument, if we went back 30 or so years in time, it *was* probably the case that many computing problems could be solved building on such fundamental approaches.
 
@@ -116,7 +116,7 @@ Who knows what we'll consider to be fundamental topics in computing 10, 30, or 5
 
 Thus, just as we should update curricula today to reflect the new fundamentals of the 2000s and 2010s, we should also take care to ensure that at no point the understanding of what CS topics are fundamental is frozen in amber. Universities would be well-served to continuously reevaluate this understanding and update their curricula accordingly, perhaps every five to ten years or so. They should make sure to embrace the innovations that have widely become best practices in industry and elsewhere, while rejecting the inclusion of the latest hype technology of the year solely based on that hype.
 
-# Concluding thoughts
+## Concluding thoughts
 
 A sometimes-explicit undercurrent that I often see within this discourse is the idea that students should really be learning practical skills on their own time, and that the ability to self-learn these concepts is an important signal to employers of students' drive and resourcefulness.
 

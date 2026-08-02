@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title | markdownify }}</h1>
+    {{ with .Date }}
+      <p class="post-meta">
+        <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+      </p>
+    {{ end }}
+
+    {{ if and (or .Params.showToc .Params.toc) .Fragments.Headings }}
+      <nav class="toc" aria-label="Table of contents">{{ .TableOfContents }}</nav>
+    {{ end }}
+
+    {{ .Content }}
+  </article>
+
+  {{/* Neighbours, skipping stub pages that only link out to writing hosted elsewhere. */}}
+  {{ $posts := slice }}
+  {{ range .CurrentSection.RegularPages.ByDate.Reverse }}
+    {{ if not .Params.external }}{{ $posts = $posts | append . }}{{ end }}
+  {{ end }}
+  {{ $idx := -1 }}
+  {{ range $i, $p := $posts }}
+    {{ if eq $p.RelPermalink $.RelPermalink }}{{ $idx = $i }}{{ end }}
+  {{ end }}
+
+  {{ if ge $idx 0 }}
+    {{ $newer := cond (gt $idx 0) (index $posts (sub $idx 1)) false }}
+    {{ $older := cond (lt (add $idx 1) (len $posts)) (index $posts (add $idx 1)) false }}
+    {{ if or $newer $older }}
+      <nav class="post-nav">
+        {{ with $newer }}
+          <a class="post-nav__prev" href="{{ .RelPermalink }}">&larr; {{ .Title | markdownify }}</a>
+        {{ end }}
+        {{ with $older }}
+          <a class="post-nav__next" href="{{ .RelPermalink }}">{{ .Title | markdownify }} &rarr;</a>
+        {{ end }}
+      </nav>
+    {{ end }}
+  {{ end }}
+{{ end }}

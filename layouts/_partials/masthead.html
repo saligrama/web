@@ -1,0 +1,13 @@
+<header class="masthead">
+  {{ if .IsHome }}
+    <h1 class="masthead-name"><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
+  {{ else }}
+    <div class="masthead-name"><a href="{{ "/" | relURL }}">{{ site.Title }}</a></div>
+  {{ end }}
+  <nav class="masthead-nav">
+    {{ range site.Menus.main }}
+      {{ $current := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+      <a href="{{ .URL }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

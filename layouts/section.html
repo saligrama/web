@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="lede">{{ . }}</div>{{ end }}
+
+  <ul class="rows">
+    {{ range .RegularPages.ByDate.Reverse }}
+      {{ $url := .Params.external | default .RelPermalink }}
+      <li class="row">
+        <a
+          href="{{ $url }}"
+          {{- with .Params.external }} rel="noopener"{{ end }}
+        >
+          <span class="row-label">{{ .Params.label | default "post" }}</span>
+          <span class="row-title">{{ .Title | markdownify }}</span>
+          <time class="row-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{- .Date.Format "Jan 2006" -}}
+          </time>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

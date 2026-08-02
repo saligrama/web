@@ -1,0 +1,24 @@
+{{- $src := .Get "src" -}}
+{{- $caption := .Get "caption" -}}
+{{- $alt := .Get "alt" | default $caption -}}
+{{- $position := .Get "position" | default "center" -}}
+{{- $captionPosition := .Get "captionPosition" | default $position -}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+
+<figure class="figure figure--{{ $position }}">
+  {{- if and $img (eq $img.ResourceType "image") -}}
+    <img
+      src="{{ $img.RelPermalink }}"
+      width="{{ $img.Width }}"
+      height="{{ $img.Height }}"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+    />
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+  {{- end -}}
+  {{- with $caption }}
+    <figcaption class="figcaption figcaption--{{ $captionPosition }}">{{ . | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

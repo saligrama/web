@@ -30,7 +30,7 @@ On the other hand, I also wanted to take note of and express gratitude for what 
 * [Guest speakers who drive course content forward are your greatest asset](#guest-speakers-who-drive-course-content-forward-are-your-greatest-asset)
 * [We didn't know how novel CS 40 was](#we-didnt-know-how-novel-cs-40-was)
 
-# You don't know in advance how well lecture material will land
+## You don't know in advance how well lecture material will land
 
 Given our [motivations](/blog/infracourse-how-to-setup/#course-motivation) in launching CS 40 and our desire to make the course as accessible as possible to a broad audience, we wanted to keep the barrier to entry as low as possible while ensuring students would still be able to stay on top of the course. Our official prerequisite for the course was programming maturity to the level of [CS 107](https://web.stanford.edu/class/cs107/) *Computer Organization and Systems* as well as some Unix command-line experience. We didn't expect students to have any prior web development or computer networking experience. Thus, some students might be seeing basic web and networking content for the very first time, which we didn't have much time to cover in the beginning of the course.
 
@@ -44,7 +44,7 @@ Ultimately, I think the vast majority of students *did* take away the core learn
 
 At Stanford, I've frequently heard that the first offerings of new courses will generally have a self-selecting batch of students with more prior experience in the given subject area than expected, but that the average student prior experience level drops in subsequent offerings. Thus, we might need to spend more time on background concepts in the future -- in particular, networking and web apps. Additionally, we might add more to Assignment 1 in order to help students build up some of these background skills that would help them throughout the course.
 
-# We could have better calibrated assignment difficulty
+## We could have better calibrated assignment difficulty
 
 From the moment we first started working on course material over the summer, we knew that [Assignment 2](https://infracourse.cloud/assignments/2) -- deploying the Yoctogram frontend and backend to AWS using infrastructure-as-code -- would be the most difficult for students to complete. This assignment had by far the most moving parts, both for us and for students, and we had planned to give students nearly three weeks to complete it, anticipating that it would take about 10-15 hours to complete, including debugging.
 
@@ -56,7 +56,7 @@ Assignment 1 was as simple as it was primarily due to the add-drop deadline bein
 
 However, this constraint won't prevent us from better calibrating the difficulty of Assignment 1 to the rest of the course; we can still achieve plenty on free EC2 instances. Next year's Assignment 1 will go further than this year's -- potentially involving deploying the full Yoctogram frontend and backend on a single EC2 instance. 
 
-# Designing IaC assignments is tough
+## Designing IaC assignments is tough
 
 One of the challenges we anticipated CS 40 students might struggle with was the sheer amount of fully new content we were throwing at them. Given our stated prerequisites, we tried to keep the assignment content fairly straightforward in order to give students experience with cloud constructs while not being overwhelming. For example, we chose the AWS Cloud Development Kit (CDK) in Python as the IaC language used to deploy example web apps in AWS, to ensure that students wouldn't need to learn a new language to deploy IaC.
 
@@ -72,7 +72,7 @@ The other downside of this approach was that it also made it difficult for stude
 
 Next year, we'll try to significantly reduce the scaffolding we provide students, focusing on letting them make more architectural deployment choices and honing their debugging skills.
 
-# AWS CDK made students' lives harder
+## AWS CDK made students' lives harder
 
 We ran into a number of sharp edges with CDK's state management such that failures became very difficult for students to debug. Many of these issues stem from the fact that CDK is a leaky abstraction over AWS CloudFormation: when you write CDK configuration in (e.g.) Python, CDK will transpile or "synthesize" it to a big JSON blob that will then be deployed via CloudFormation. Thus, CDK inherits CloudFormation's well-known state management issues.
 
@@ -84,11 +84,11 @@ Students would often come to office hours not knowing how to debug this deployme
 
 Next year, we'll look into using different IaC frameworks for student deployments; in particular, Terraform or OpenTofu.
 
-# Building course infrastructure on limited notice was a fun challenge
+## Building course infrastructure on limited notice was a fun challenge
 
 While we were able to plan and build some of the [infrastructure](/blog/infracourse-infra) we needed for the course before the quarter started, there was still a substantial amount that we had to build on very short notice. Much of this stemmed from not knowing the specifications of what we needed to build until we were at the point of needing that particular piece of infra.
 
-## Distributing AWS credits
+### Distributing AWS credits
 
 It wasn't until well into the quarter that we could confirm how students' AWS accounts would be set up. Initially, we expected to have each student set up their own AWS accounts, to which AWS would either deposit credits directly or email students links to deposit credits.
 
@@ -96,7 +96,7 @@ After our request for $200 of credits per student was approved, our account reps
 
 Eventually, we settled on students using their own AWS accounts, mainly with free tier resources until the add/drop deadline, at which point they could get credits. However, one week before students needed the credits to start Assignment 2, AWS just sent us a spreadsheet with a number of credit codes rather than distributing to students individually, so we had to come up with a way to distribute these credits ourselves within that week. We [integrated](/blog/infracourse-infra/#distributing-aws-credits) that functionality into our [DNS provisioner](https://github.com/infracourse/dns-provisioner).
 
-## Provisioning DNS A records
+### Provisioning DNS A records
 
 Downstream of the AWS account structure issue was the question of how students would complete Assignment 1, for which they needed a DNS record pointing to their EC2 instance serving a static site in order to set up Let's Encrypt. 
 
@@ -104,7 +104,7 @@ While we were working on releasing Assignment 1, we were still evaluating the po
 
 Thus, just before we released Assignment 1, we had to make a quick change to our DNS provisioner for Assignment 1 to simply assign `A` records of the form `a1.SUNETID.infracourse.cloud` directly to a student's EC2 IP address.
 
-## Autograders
+### Autograders
 
 Since our pre-quarter preparation was mostly focused on creating assignments and lecture material, we didn't start building the [autograders](/blog/infracourse-infra/#autograding) until after the assignments were released (though we knew what student deliverables would need to look like in order to give us something that could be autograded).
 
@@ -112,7 +112,7 @@ Since one of our goals was to give students early feedback on assignments to let
 
 Difficulties included making sure the autograder didn't assign undeserved points, making sure it didn't penalize students with a correct implementation, and hardening the architecture against the [Gradescope attack](/blog/gradescope-autograder-security) I wrote about previously -- especially since one of our course policies included potential extra credit for confirmed vulnerability reports. 
 
-# Guest speakers who drive course content forward are your greatest asset
+## Guest speakers who drive course content forward are your greatest asset
 
 When developing the course, we knew we wanted to feature lectures by guest speakers from industry as a way to inform students about how the tools and concepts they were learning are applied at a larger scale.
 
@@ -124,11 +124,11 @@ I'm happy to say that all of our guest speakers for CS 40 slotted in perfectly t
 
 This is a huge shoutout to all our guest speakers -- thank you!
 
-# We didn't know how novel CS 40 was
+## We didn't know how novel CS 40 was
 
 While building and teaching the class, it was easy to get caught up in the day-to-day and the overwhelming number of tasks that needed to be done at any given time. It wasn't until well after we had submitted the final grades to the registrar and I'd started my spring-quarter teaching role as a Course Assistant for [CS 155](https://cs155.stanford.edu) *Computer and Network Security* that I started to reflect on CS 40 in a broader context.
 
-## The existing landscape of cloud courses
+### The existing landscape of cloud courses
 
 One of the first, unnoticed signs of novelty was probably the significant difficulty we encountered over the summer in finding any prior art for a hands-on cloud course. At the time, I think I assumed that this was simply due to other universities' CS departments being less open with their course materials than Stanford. 
 
@@ -140,7 +140,7 @@ In contrast, we wanted to offer a course that taught fundamental cloud fluency a
 
 Setting the framing aside, we were also not able to find any instance of a course teaching students how to use infrastructure-as-code, which we thought was a foundational concept in terms of systematically deploying cloud resources. Additionally, no existing course had assignments tailored towards serverless application design, which is a principal benefit that modern public cloud providers offer over traditional data centers.
 
-## CS 40's unique niche
+### CS 40's unique niche
 
 The lack of prior art forced us to think through all aspects of what students might learn from lectures and assignments.
 
