@@ -2,6 +2,7 @@
 title: "Resume"
 description: "Aditya Saligrama's resume"
 draft: false
+wide: true
 aliases:
     - /portfolio
     - /cs

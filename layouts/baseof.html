@@ -4,7 +4,8 @@
     {{ partial "head.html" . }}
   </head>
   <body>
-    <div class="wrap">
+    {{/* Listings and the resume are denser than prose, so they get a roomier column. */}}
+    <div class="wrap{{ if or .IsSection .Params.wide }} wrap--wide{{ end }}">
       {{ partial "masthead.html" . }}
       <main>
         {{ block "main" . }}{{ end }}
