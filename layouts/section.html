@@ -10,8 +10,13 @@
           href="{{ $url }}"
           {{- with .Params.external }} rel="noopener"{{ end }}
         >
-          <span class="row-label">{{ .Params.label | default "post" }}</span>
-          <span class="row-title">{{ .Title | markdownify }}</span>
+          <span class="row-title">
+            {{- .Title | markdownify -}}
+            {{- with .Params.external -}}
+              <span class="row-ext" aria-hidden="true">&#8599;</span
+              ><span class="sr-only"> (external link)</span>
+            {{- end -}}
+          </span>
           <time class="row-date" datetime="{{ .Date.Format "2006-01-02" }}">
             {{- .Date.Format "Jan 2006" -}}
           </time>

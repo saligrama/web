@@ -127,16 +127,38 @@ a:hover {
   text-decoration-thickness: 0.12em;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 // ---------------------------------------------------------------------------
 // Masthead
 // ---------------------------------------------------------------------------
 
 .masthead {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.15rem 0.9rem;
   margin-bottom: 2.75rem;
 }
 
+.avatar {
+  grid-row: span 2;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
 .masthead-name {
-  margin: 0 0 0.35rem;
+  margin: 0;
   font-family: var(--font-head);
   font-size: 1.35rem;
   font-weight: 600;
@@ -392,31 +414,6 @@ th {
 // Home
 // ---------------------------------------------------------------------------
 
-.intro {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.75rem;
-}
-
-.avatar {
-  flex: none;
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-}
-
-@media (max-width: 34rem) {
-  .intro {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .avatar {
-    width: 96px;
-    height: 96px;
-  }
-}
-
 .social {
   display: flex;
   flex-wrap: wrap;
@@ -463,8 +460,7 @@ th {
 
   a {
     display: grid;
-    grid-template-columns: 5rem 1fr auto;
-    grid-template-areas: "label title date";
+    grid-template-columns: 1fr auto;
     align-items: baseline;
     gap: 0.25rem 1rem;
     padding: 0.7rem 0;
@@ -472,42 +468,30 @@ th {
     text-decoration: none;
   }
 
-  a:hover .row-title {
+  a:hover .row-title,
+  a:hover .row-ext {
     color: var(--accent);
   }
 }
 
-.row-label {
-  grid-area: label;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .row-title {
-  grid-area: title;
   font-weight: 500;
   line-height: 1.4;
 }
 
+// Inter's subset has no U+2197; the mono face does, and matches the date.
+.row-ext {
+  margin-left: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--muted);
+}
+
 .row-date {
-  grid-area: date;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--muted);
   white-space: nowrap;
-}
-
-@media (max-width: 34rem) {
-  .row a {
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "title title"
-      "label date";
-    gap: 0.3rem 1rem;
-  }
 }
 
 // ---------------------------------------------------------------------------

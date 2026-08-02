@@ -1,19 +1,5 @@
 {{ define "main" }}
-  <div class="intro">
-    {{ with resources.Get "images/profile-photo.jpg" }}
-      {{ $avatar := .Fill "224x224 Center q85" }}
-      <img
-        class="avatar"
-        src="{{ $avatar.RelPermalink }}"
-        width="112"
-        height="112"
-        alt="{{ site.Title }}"
-      />
-    {{ end }}
+  {{ .Content }}
 
-    <div class="intro-body">
-      {{ .Content }}
-      {{ partial "social.html" . }}
-    </div>
-  </div>
+  {{ partial "social.html" . }}
 {{ end }}

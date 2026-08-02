@@ -49,4 +49,4 @@ disableKinds = ['taxonomy', 'term']
     identifier = "resume"
     name = "resume"
     url = "/resume"
-    weight = 1
+    weight = 5
