@@ -16,11 +16,6 @@
 <meta name="twitter:description" content="{{ . }}" />
 {{- end }}
 
-{{/* Read by the Cloudflare Pages function in functions/lib/og.tsx to render OG images. */}}
-{{- if and (ne $page.WordCount 0) (not $page.Params.hideWordCount) }}
-<meta property="article:word_count" content="{{ $page.WordCount }}" />
-{{- end }}
-
 {{- if $page.IsPage }}
   {{- if not $page.PublishDate.IsZero }}
 <meta property="article:published_time" {{ $page.PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />

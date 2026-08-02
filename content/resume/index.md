@@ -8,7 +8,6 @@ aliases:
     - /cs
     - /experience
     - /research
-hideWordCount: true
 ---
 
 <p class="lede"><a href="/files/resume.pdf">One-page PDF</a></p>

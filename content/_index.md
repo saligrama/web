@@ -2,7 +2,6 @@
 title: "Aditya Saligrama"
 draft: false
 description: "Software engineer; security & infrastructure enthusiast; Stanford alum"
-hideWordCount: true
 ---
 
 I'm a senior software engineer at [Formal](https://formal.ai) helping empower security teams to enforce least-privilege access for agents and humans using proxies. Previously, I worked on security and infrastructure at [Cloudflare](https://cloudflare.com) and [Verkada](https://verkada.com).
