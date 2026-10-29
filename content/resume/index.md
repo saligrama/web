@@ -80,6 +80,7 @@ Learning Certifiably Optimal Rule Lists](/files/sysml.pdf). *SysML (now MLSys) C
 
 ## Talks
 
+* [Letting cloud agents loose on our infra (without long-lived secrets)](/files/talks/20261028-cloud-agents-oidc.pdf). *All Access Pass*, October 28, 2026.
 * [Monitoring and Constraining the Bananas VS Code SSH Extension](/files/talks/20250516-vscode-ssh.pdf). *Stanford Applied Cyber Weekly Meeting (ACWM)*, May 16, 2025.
 * [Lessons from Running a Product Security Clinic](/files/talks/20250427-security-clinic-lessons.pdf). *[BSidesSF 2025](https://bsidessf.org) (w/ [Joey Holtzman](https://joeyholtzman.com/))*, April 27, 2025.
 * [Teaching Cloud Infrastructure in an Undergraduate CS Program](/files/talks/20250301-teaching-cloud-infrastructure.pdf). *[SIGCSE TS 2025](https://sigcse2025.sigcse.org/) (w/ [Cody Ho](https://github.com/aesrentai))*, March 1, 2025.
